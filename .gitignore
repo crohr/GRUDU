@@ -1,2 +1,6 @@
 .svn
 .DS_Store
+bin
+tools
+GRUDU.jar
+build
