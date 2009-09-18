@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Configuring GRUDU</TITLE>
+<META NAME="description" CONTENT="Configuring GRUDU">
+<META NAME="keywords" CONTENT="Grudu-UM">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Grudu-UM.css">
+
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html140"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html136"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html132"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html138"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html141"
+  HREF="node8.html">Automating the installation</A>
+<B> Up:</B> <A NAME="tex2html137"
+  HREF="node5.html">Automatic installation</A>
+<B> Previous:</B> <A NAME="tex2html133"
+  HREF="node6.html">Installation of the software</A>
+ &nbsp; <B>  <A NAME="tex2html139"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00401200000000000000">
+Configuring GRUDU</A>
+</H3>
+After having installed GRUDU, you should configure it. The
+configuration panel is separated into two parts, the first concerns the access
+to G<SMALL>RID'5000</SMALL>. In this tab you have to define :
+<BR>
+<UL>
+<LI>a preferred access point (the external frontal that will be used to
+  enter in the G<SMALL>RID'5000</SMALL> network). The ComboBox contains the different sites of G<SMALL>RID'5000</SMALL>.
+</LI>
+<LI>your user name (your G<SMALL>RID'5000</SMALL> login)
+</LI>
+<LI>your ssh public key, rsa or dsa (for more information about ssh access
+  with public/private keys, please refer to the G<SMALL>RID'5000</SMALL> Wiki pages treating this subject at :
+<BR>  <TT><A NAME="tex2html8"
+  HREF="https://www.grid5000.fr/mediawiki/index.php/SSH">https://www.grid5000.fr/mediawiki/index.php/SSH</A></TT>
+</LI>
+<LI>the passphrase of your public key.
+</LI>
+</UL>
+
+<DIV ALIGN="CENTER"><A NAME="92"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.3:</STRONG>
+G<SMALL>RID'5000</SMALL> access configuration</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="383" HEIGHT="287" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="\includegraphics[scale=0.3]{figures/GRUDU10.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The second tab of the panel consists in selecting the clusters you want
+to enable in GRUDU (e.g. the cluster that will be considered when launching
+oarstat or oarnodes commands, or when reserving machines). In this tab you will
+also be able to define the partition used by Kadeploy for the deployment of an
+image (for more informations about the partitions you can specify please refer
+to the pages of the sites on the G<SMALL>RID'5000</SMALL> Wiki or to the messages of the day
+displayed when you get connected to a cluster).
+<BR>
+<DIV ALIGN="CENTER"><A NAME="98"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.4:</STRONG>
+G<SMALL>RID'5000</SMALL> clusters configuration</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="383" HEIGHT="287" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="\includegraphics[scale=0.3]{figures/GRUDU11.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+When all these information will be filled out, you will be able to write the
+configuration by clicking the ``Write configuration'' button. This action will
+create the local hierarchy of files mandatory for GRUDU (a directory called
+<TT>.diet</TT> containing all the files for GRUDU will be created in your home
+directory), and the remote hierarchy of files mandatory for GRUDU (approximately
+the same on the clusters of G<SMALL>RID'5000</SMALL>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html140"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html136"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html132"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html138"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html141"
+  HREF="node8.html">Automating the installation</A>
+<B> Up:</B> <A NAME="tex2html137"
+  HREF="node5.html">Automatic installation</A>
+<B> Previous:</B> <A NAME="tex2html133"
+  HREF="node6.html">Installation of the software</A>
+ &nbsp; <B>  <A NAME="tex2html139"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+David Loureiro
+2007-07-04
+</ADDRESS>
+</BODY>
+</HTML>

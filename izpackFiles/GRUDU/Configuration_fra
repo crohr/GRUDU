@@ -1,0 +1,17 @@
+<html>
+<p>Le prochain panel va vous présenter l'étape de configuration de GRUDU.</p>
+<p>Il vous sera demandé des informations pour la configuration globale de l'application telles que :
+<ul>
+<li>Votre login Grid'5000</li>
+<li>Le chemin vers votre clé SSH privée</li>
+<li>La passprhase pour cette clé</li>
+</ul>
+</p>
+<p>D'autres informations pour la configuration de Grid'5000 (les clusters à activer, etc ...):
+<ul> 
+<li>Les clusters qui doivent être activés ou non</li>
+<li>La partition à utiliser pour le déploiement avec KaDeploy</li>
+<li>Le batch scheduler utilisé par le cluster</li>
+</ul>
+</p>
+</html>

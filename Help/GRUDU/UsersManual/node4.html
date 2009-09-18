@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Requirements and installation</TITLE>
+<META NAME="description" CONTENT="Requirements and installation">
+<META NAME="keywords" CONTENT="Grudu-UM">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Grudu-UM.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="Grudu-UM.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html99"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html95"
+  HREF="Grudu-UM.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html89"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html97"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html100"
+  HREF="node5.html">Automatic installation</A>
+<B> Up:</B> <A NAME="tex2html96"
+  HREF="Grudu-UM.html">User's Manual</A>
+<B> Previous:</B> <A NAME="tex2html90"
+  HREF="node3.html">Introduction</A>
+ &nbsp; <B>  <A NAME="tex2html98"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00400000000000000000">
+Requirements and installation</A>
+</H1>
+
+<P>
+[[:]:!:}[[:]:!:}Requirements
+
+<P>
+Since G<SMALL>RUDU</SMALL> is dedicated to G<SMALL>RID'5000</SMALL> grid computing infrastructure, the
+first thing you need to use, is a G<SMALL>RID'5000</SMALL> account and an access to, at
+least one cluster of those composing the platform. For more information about
+how to access G<SMALL>RID'5000</SMALL> grid, please refer to the web page of G<SMALL>RID'5000</SMALL>: <TT><A NAME="tex2html4"
+  HREF="https://www.grid5000.fr/mediawiki/index.php/Grid5000:Home">https://www.grid5000.fr/mediawiki/index.php/Grid5000:Home</A></TT>
+<P>
+G<SMALL>RUDU</SMALL> is written in Java and thus it can be executed on any platform
+that offers a recent version of the Java runtime (At least, 1.5.0 version of higher).
+Currently,
+G<SMALL>RUDU</SMALL> support only Bourne shell, so if your G<SMALL>RID'5000</SMALL> account uses another shell
+type, you need to change it. This requirement is only for your G<SMALL>RID'5000</SMALL> 
+account and you still can use your preferred shell on your machine.
+
+<P>
+To allow G<SMALL>RUDU</SMALL> to access to all the platform, you need to configure
+your account to authorize a direct access to the different sites. To
+do that make sure you have that all these conditions are fulfilled:
+
+<P>
+
+<OL>
+<LI>you have you ssh key in every site: each G<SMALL>RID'5000</SMALL> site has its own
+  NFS filesystem, so you need to copy your ssh key (at least the
+  public one) in your <code>.ssh</code> directory.
+</LI>
+<LI>you have you public ssh key in the file
+  <code>$HOME/.ssh/authorized_keys</code>. You can do this by a command like
+  this: <code>cat $HOME/.ssh/id_rsa.pub &gt;&gt; $HOME/.ssh/authorized_keys</code>.
+</LI>
+<LI>the following option should be present in your <code>$HOME/.ssh/config</code>
+  file :
+<BR>  <PRE>
+Host *
+StrictHostKeyChecking no
+</PRE>
+</LI>
+</OL>
+
+<P>
+For more information about ssh access to G<SMALL>RID'5000</SMALL>, key management or file exchange
+please refer to the documentation of G<SMALL>RID'5000</SMALL> at : <TT><A NAME="tex2html5"
+  HREF="https://www.grid5000.fr/mediawiki/index.php/Documentation">https://www.grid5000.fr/mediawiki/index.php/Documentation</A></TT>
+<P>
+[[:]:!:}[[:]:!:}Installation
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><UL>
+<LI><A NAME="tex2html101"
+  HREF="node5.html">Automatic installation</A>
+<UL>
+<LI><A NAME="tex2html102"
+  HREF="node6.html">Installation of the software</A>
+<LI><A NAME="tex2html103"
+  HREF="node7.html">Configuring GRUDU</A>
+</UL>
+<LI><A NAME="tex2html104"
+  HREF="node8.html">Automating the installation</A>
+<LI><A NAME="tex2html105"
+  HREF="node9.html">Manual installation</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html99"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html95"
+  HREF="Grudu-UM.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html89"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html97"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html100"
+  HREF="node5.html">Automatic installation</A>
+<B> Up:</B> <A NAME="tex2html96"
+  HREF="Grudu-UM.html">User's Manual</A>
+<B> Previous:</B> <A NAME="tex2html90"
+  HREF="node3.html">Introduction</A>
+ &nbsp; <B>  <A NAME="tex2html98"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+David Loureiro
+2007-07-04
+</ADDRESS>
+</BODY>
+</HTML>

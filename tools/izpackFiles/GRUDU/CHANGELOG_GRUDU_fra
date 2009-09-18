@@ -1,0 +1,71 @@
+GRUDU : Grid Reservation Utility for the Deployment Usage (http://graal.ens-lyon.fr/DIET/grudu.html)
+
+version 1.1.2 : 
+
+* Bugs correction (http://graal.ens-lyon.fr/bugzilla) :
+
+ - bug 53 : Lors de l'installation ou de l'utilisation de GRUDU, il y a vait un 
+ problème pour la connexion avec le site de rennes. Il s'agit en fait d'une 
+ différence dans l'utilisation des conventions de nommage. Maintenant que celles-ci
+ sont appliquées sur tout grid'5000, GRUDU et l'installateur les prennent en compte.
+
+* Mises à jour :
+
+ - mise à jour du nombre de noeuds du cluster sagittaire du site de Lyon.
+
+version 1.1.1 :
+
+* Correction de bugs (http://graal.ens-lyon.fr/bugzilla) : 
+
+ - bug 47 : le temps de grid'5000 n'est plus calculé via la frontale d'accès préférée mais grâce
+ à la frontale utilisée pour la connexion. De plus dans le cas où ceci non plus ne marcherais pas
+ le temps de grid'5000 est calculé par rapport au temps de la machine locale.
+ 
+ - bug 48 : les jobs de type deploy n'étaient pas affichés en tant que tel. Maintenant ce bug est
+ corrigé. Le parsing n'était pas effectué correctement (parsing de la variable type au lieu de 
+ types).
+
+version 1.1.0 :
+
+* Nouvelles fonctionnalités :
+
+ - Compatible OAR1 & OAR2
+ - Support de Ganglia (niveau site et job)
+ - Module JFTP
+ - L'utilisateur peut connaitre le nombre de noeuds qu'il a réservé
+ - Passphrase uniquement en mémoire et non sauvée sur disque
+ - Support du mode OARGridSub
+ - Support du lancement de script
+ 
+* Mise à jour :
+
+ - Mise à jour du manuel de l'utilisateur de GRUDU. Aussi displonible à 
+ http://graal.ens-lyon.fr/DIET/wiki/doku.php?id=grudu:grudu_grid_5000_reservation_utility_for_deployment_usage
+ et https://www.grid5000.fr/mediawiki/index.php/GRUDU
+ 
+ - Mise à jour de l'aide de GRUDU.
+
+* Correction de bugs (http://graal.ens-lyon.fr/bugzilla) : 
+
+ - bug 37 : Il s'agissait à la base d'un problème avec le nombre maximal de noeud
+ du site de Nancy. En fait, il s'agissait plutôt d'un problème lié aux propriétés
+ utilisées par  défaut pour les réservations. Maintenant il y a un nouveau panel
+ pour la définition des propriétés utilisées pour la réservation qui va être
+ effectuée par l'utilisateur.
+ 
+ - bug 39 : Les utilisateurs pouvent dès à présent demander à ce que leurs réservations
+ suivent le comportement OARGridSub, c'est-à-dire que si une des réservations demandée
+ ne peut être effectuée, alors toutes les réservations suivantes ne sont pas faites et 
+ les réservation qui viennent d'êter validées sont annulées. Ce choix peut être 
+ fait lors de la réservation en cochant ou pas la checkbox correspondante.
+  
+ - bug 40 : Afin de résoudre le problème lié au manque de status sur les réservations
+ quand elle ont finies d'être soumises, une fenêtre donne maintenant un résumé de l'état
+ des réservations demandées.
+ 
+ - bug 45 : La date et l'heure sont maintenant fixées à partir de la timezone de Grid'5000.
+ 
+ - bug 38 : L'explication des informations demandées pendant la phase d'installation sont
+ maintenant présentes dans l'installateur. Ces informations sont nécessaires pour la
+ création de hierarchie de fichiers nécessaires pour l'utilisation de certaines fonctions
+ de GRUDU (comme le déploiement)

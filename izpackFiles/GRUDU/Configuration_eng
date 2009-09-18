@@ -1,0 +1,17 @@
+<html>
+<p>The next panel will present you the configuration step.</p>
+<p>You will be asked some information for the global configuration such as:
+<ul>
+<li>The Username</li>
+<li>The SSH private key</li>
+<li>The passphrase for that key</li>
+</ul>
+</p>
+<p>Other information for the configuration of Grid'5000 (the clusters, etc ...):
+<ul> 
+<li>The clusters that should be enabled or not</li>
+<li>Their partitions for the deployment through KaDeploy</li>
+<li>The batch scheduler for each cluster</li>
+</ul>
+</p>
+</html>

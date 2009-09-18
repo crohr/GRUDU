@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<!-- ****************************************************************** -->
+<!--                                                                    -->
+<!-- Build.xml : file for the compilation of the   -->
+<!-- GRUDU external tools                                               -->
+<!--                                                                    -->
+<!-- Purpose   : this file is used to compile the executable jar files  -->
+<!--             needed by the GRUDU project.                           -->
+<!--                                                                    -->
+<!-- Authors   : Abdelkader Amar < abdelkader.amar@ens-lyon.fr >        -->
+<!--             David Loureiro  < david.loureiro@ens-lyon.fr >         -->
+<!--                                                                    -->
+<!-- ****************************************************************** -->
+
+<project default="build-GRUDU-manual">
+
+	
+	<target name="build-GRUDU-manual">
+		<echo message="--- Building the User's Manual of GRUDU ---"/>
+		<exec executable="make">
+		    <arg value="pdf"/>
+		</exec>
+	</target>
+	
+	<target name="clean-GRUDU-manual">
+		<echo message="--- Cleaning the User's Manual of GRUDU ---"/>
+		<exec executable="make">
+				    <arg value="clean"/>
+				</exec>
+	</target>
+</project>

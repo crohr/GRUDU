@@ -1,0 +1,1 @@
+java -jar Uninstaller/GRUDU_Uninstaller.jar

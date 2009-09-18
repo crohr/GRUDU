@@ -1,0 +1,10 @@
+*.dvi
+*.out
+Grudu-UM.aux
+Grudu-UM.bbl
+Grudu-UM.blg
+Grudu-UM.lof
+Grudu-UM.toc
+Grudu-UM.pdf
+Grudu-UM.ps
+tmp

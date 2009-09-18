@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!-- The French langpack -->
+
+<langpack>
+
+	<str id="installer.reversetitle" txt="$APP_NAME $APP_VER - IzPack Assistant d'installation"/>
+
+    <str id="PacksPanel" txt="Sélection des modules à installer" />
+    <str id="PacksPanel.description" txt="Description"/>
+
+    <str id="base.package" txt="Base"/>
+    <str id="doc.package" txt="Documentation (Javadoc) de GRUDU"/>
+    <str id="sources.package" txt="Sources de GRUDU" />
+
+    <str id="base.package.description" txt="Ce sont les composants de base de GRUDU"/>
+    <str id="doc.package.description" txt="Si vous souhaitez avoir la documentation (Javadoc) de GRUDU, vous devez cocher ce pack"/>
+	<str id="sources.package.description" txt="Si vous souhaitez avoir les sources de GRUDU, vous devez cocher ce pack"/>
+
+	<str id="GruduInstallationPanel.kadeploy_partition" txt="Partition Kadeploy"/>
+	<str id="GruduInstallationPanel.none" txt="Aucun"/>
+	<str id="GruduInstallationPanel.user_configuration" txt="Configuration Utilisateur"/>
+	<str id="GruduInstallationPanel.misc" txt="Misc" />
+	<str id="GruduInstallationPanel.username" txt="Utilisateur"/>
+	<str id="GruduInstallationPanel.ssh_key_file" txt="Clé SSH privée"/>
+	<str id="GruduInstallationPanel.passphrase" txt="Passphrase"/>
+	<str id="GruduInstallationPanel.preferred_acces_point" txt="Frontale d'accés préférée"/>
+	<str id="GruduInstallationPanel.ssh_key_file_tooltip" txt="Le chemin vers le fichier doit être absolu"/>
+	<str id="GruduInstallationPanel.browse" txt="Explorer" />
+	<str id="GruduInstallationPanel.proceed_configuration" txt="Ecrire la configuration"/>
+	<str id="GruduInstallationPanel.waiting_frame_title" txt="Création des dossiers DIET distants"/>
+    <str id="GruduInstallationPanel.waiting_frame_description_text" txt="Installation des fichiers nécessaires sur les frontales de Grid5000" />
+    <str id="GruduInstallationPanel.waiting_frame_connection_text" txt="Ouverture de la connexion"/>
+    <str id="GruduInstallationPanel.working_on_site" txt="Travail en cours sur le site : "/>
+
+</langpack>

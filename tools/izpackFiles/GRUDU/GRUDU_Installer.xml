@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<installation version="1.0">
+
+	<info>
+		<appname>GRUDU</appname>
+		<appversion>1.1.2</appversion>
+		<authors>
+			<author name="Abdelkader Amar" email="abdelkader.amar@ens-lyon.fr" />
+			<author name="David Loureiro" email="david.loureiro@ens-lyon.fr" />
+		</authors>
+		<url>http://graal.ens-lyon.fr/grudu</url>
+		<uninstaller name="GRUDU_Uninstaller.jar"/>
+		<javaversion>1.5</javaversion>
+	</info>
+
+	<variables>
+		<variable name="InstallerFrame.logfilePath" value="$INSTALL_PATH/install.log" />
+	</variables>
+
+	<guiprefs resizable="no" width="1024" height="768">
+		<laf name="liquid">
+			<os family="unix"/>
+		</laf>
+		<laf name="liquid">
+			<os family="windows"/>
+		</laf>
+		<modifier key="useButtonIcons" value="yes" />
+		<modifier key="useLabelIcons" value="yes" />
+		<modifier key="useHeadingPanel" value="yes" />
+		<modifier key="labelGap" value="2"/>    
+  		<modifier key="layoutAnchor" value="CENTER"/> 
+		<modifier key="headingLineCount" value="1" />
+		<modifier key="headingFontSize" value="1.5" />
+		<modifier key="headingBackgroundColor" value="0x00ffffff" />
+		<modifier key="headingPanelCounter" value="progressbar" />
+		<modifier key="headingPanelCounterPos" value="inNavigationPanel" />
+	</guiprefs>
+
+	<native type="izpack" name="ShellLink.dll"/>
+
+	<locale>
+		<langpack iso3="eng" />
+		<langpack iso3="fra" />
+	</locale>
+
+	<resources>
+		<res id="HTMLInfoPanel.info" src="izpackFiles/GRUDU/README_eng.html" />
+		<res id="HTMLInfoPanel.info_fra" src="izpackFiles/GRUDU/README_fra.html" />
+		<res id="CHANGELOGPanel.info" src="izpackFiles/GRUDU/CHANGELOG_GRUDU_eng" />
+		<res id="CHANGELOGPanel.info_fra" src="izpackFiles/GRUDU/CHANGELOG_GRUDU_fra" />
+		<res id="ConfigurationPresentationPanel.info" src="izpackFiles/GRUDU/Configuration_eng" />
+		<res id="ConfigurationPresentationPanel.info_fra" src="izpackFiles/GRUDU/Configuration_fra" />
+		<res id="HTMLLicencePanel.licence" src="izpackFiles/GRUDU/LICENSE_eng" />
+		<res id="HTMLLicencePanel.licence_fra" src="izpackFiles/GRUDU/LICENSE_fra" />
+<!--		<res id="packsLang.xml_fra" src="izpackFiles/GRUDU/packsLang.xml_fra" />
+		<res id="packsLang.xml_eng" src="izpackFiles/GRUDU/packsLang.xml_eng" />-->
+		<!--  Considering the translations, they should be realized in the langpacks in the IzPack
+		directory in tools/IzPack/bin/langpacks/installer. For instance only eng.xml and fra.xml are modified -->
+		<res id="installer.langsel.img" src="izpackFiles/GRUDU/GRUDU.png" />
+		<res id="Heading.image" src="izpackFiles/GRUDU/IzPack_GRUDU_Heading.png" />
+		<res id="shortcutSpec.xml" src="izpackFiles/GRUDU/Win_shortcutSpec.xml" />
+		<res id="Unix_shortcutSpec.xml" src="izpackFiles/GRUDU/Unix_shortcutSpec.xml" />
+		<res id="Installer.image.0" src="izpackFiles/GRUDU/icons/hello.png"/>
+		<res id="Installer.image.1" src="izpackFiles/GRUDU/icons/info.png"/>
+		<res id="Installer.image.2" src="izpackFiles/GRUDU/icons/info.png"/>
+		<res id="Installer.image.3" src="izpackFiles/GRUDU/icons/license.png"/>
+		<res id="Installer.image.4" src="izpackFiles/GRUDU/icons/packs.png" />
+		<res id="Installer.image.5" src="izpackFiles/GRUDU/icons/target.png" />
+		<res id="Installer.image.6" src="izpackFiles/GRUDU/icons/link.png" />
+		<res id="Installer.image.7" src="izpackFiles/GRUDU/icons/summary.png" />
+		<res id="Installer.image.8" src="izpackFiles/GRUDU/icons/installation.png" />
+		<res id="Installer.image.9" src="izpackFiles/GRUDU/icons/info.png" />
+		<res id="Installer.image.10" src="izpackFiles/GRUDU/icons/configuration.png" />
+		<res id="Installer.image.11" src="izpackFiles/GRUDU/icons/finish.png" />
+	</resources>
+
+	<panels>
+		<panel classname="HelloPanel" />
+		<panel classname="HTMLInfoPanel" />
+		<panel classname="CHANGELOGPanel" />
+		<panel classname="HTMLLicencePanel" />
+		<panel classname="PacksPanel" />
+		<panel classname="TargetPanel" />
+		<panel classname="ShortcutPanel" />
+		<panel classname="SummaryPanel" />
+		<panel classname="InstallPanel" />
+		<panel classname="ConfigurationPresentationPanel" />
+		<panel classname="GruduInstallationPanel" />
+		<panel classname="SimpleFinishPanel" />
+	</panels>
+
+	<packs>
+		<pack name="Base" required="yes" preselected="yes" id="grudu_base.package" installGroups="Base,GRUDU_Full,Full">
+			<description/>
+			<file targetdir="$INSTALL_PATH" src="GRUDU.jar"/>
+			<file targetdir="$INSTALL_PATH/lib" src="lib/trilead-ssh2-build211.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/liquidlnf.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/l2fprod-common-totd.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/jfreechart-1.0.3.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/jfreechart-1.0.3-experimental.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/jcommon-1.0.6.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/jcraft.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/jcalendar-1.3.2.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/jh.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/jdom.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/l2fprod-common-buttonbar.jar"/>
+			
+			<fileset targetdir="$INSTALL_PATH/languages" dir="languages">
+				<exclude name="**/CVS/**"/>
+			</fileset>
+			
+			<fileset targetdir="$INSTALL_PATH/Help/GRUDU" dir="Help/GRUDU" >
+				<exclude name="**/CVS/**"/>
+			</fileset>
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/IzPack_GRUDU.ico">
+				<os family="windows"/>
+			</file>
+
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/IzPack_GRUDU.png">
+				<os family="unix"/>
+			</file>
+
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/LICENSE_eng"/>
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/LICENSE_fra"/>
+
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/CHANGELOG_GRUDU_eng"/>
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/CHANGELOG_GRUDU_fra"/>
+
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/README_eng"/>
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/README_fra"/>
+
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/WinLauncher.bat">
+				<os family="windows"/>
+			</file>
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/WinUninstaller.bat">
+				<os family="windows"/>
+			</file>
+
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/UnixLauncher.sh">
+				<os family="unix"/>
+			</file>
+			<executable targetfile="$INSTALL_PATH/UnixLauncher.sh" stage="never">
+				<os family="unix"/>
+			</executable>
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/UnixUninstaller.sh">
+				<os family="unix"/>
+			</file>
+			<executable targetfile="$INSTALL_PATH/UnixUninstaller.sh" stage="never">
+				<os family="unix"/>
+			</executable>
+			<file targetdir="$INSTALL_PATH" src="izpackFiles/GRUDU/chmodFiles.sh">
+				<os family="unix"/>
+			</file>
+			<parsable targetfile="$INSTALL_PATH/chmodFiles.sh">
+				<os family="unix"/>
+			</parsable>
+		</pack>
+		<pack name="Module -- JFTP" required="no" preselected="no" id="grudu_jftp.package" installGroups="Full,GRUDU_Full" >
+			<description/>
+			<file targetdir="$INSTALL_PATH/lib" src="lib/jftp.jar"/>
+			<file targetdir="$INSTALL_PATH/lib" src="lib/activation.jar"/>
+		</pack>
+		<pack name="Module -- Ganglia Analyzer" required="no" preselected="no" id="grudu_ganglia.package" installGroups="Full,GRUDU_Full" >
+			<description/>
+			<file targetdir="$INSTALL_PATH/lib" src="lib/GangliaAnalyzer.jar"/>
+			<file targetdir="$INSTALL_PATH/lib" src="lib/l2fprod-common-tasks.jar" />
+			<file targetdir="$INSTALL_PATH/lib" src="lib/GangliaHistoryMaker.jar"/>
+		</pack>
+		<pack name="Documentation" required="no" preselected="no" id="grudu_doc.package" installGroups="Full" >
+			<description/>
+			<fileset targetdir="$INSTALL_PATH/doc/GRUDU" dir="doc/api/GRUDU">
+				<exclude name="**/CVS/**" />
+			</fileset>
+			<file targetdir="$INSTALL_PATH/doc" src="doc/GRUDU_UserManual/Grudu-UM.pdf" />
+		</pack>
+		<pack name="Sources" required="no" preselected="no" id="grudu_sources.package" installGroups="Full" >
+			<description/>
+			<fileset targetdir="$INSTALL_PATH/src/resources/gridr" dir="src/resources/gridr">
+				<exclude name="**/CVS/**"/>
+			</fileset>
+			<fileset targetdir="$INSTALL_PATH/src/diet/gridr" dir="src/diet/gridr" >
+				<exclude name="**/CVS/**"/>
+			</fileset>
+			<fileset targetdir="$INSTALL_PATH/src/diet/util/gui" dir="src/diet/util/gui" >
+				<exclude name="**/CVS/**"/>
+			</fileset>
+		</pack>
+
+	</packs>
+
+</installation>

@@ -1,0 +1,65 @@
+NOTE: This file is outdated, please take a look at the sourceforge feature request site
+      if you are interested in what's going on or even want to help improving JFtp.
+
+H		- bugs and feature requests submitted on sourceforge
+		  (work still in progress, i won't list all of them here, but they aren't forgotten)
+
+H		- implement timestamping to make up/download resuming safe
+
+HF		- add ftp mget support (1 vote)
+		  (i looked at it and it is an interesting feature)
+
+M		- further enhance the GUI
+
+M		- add parameter checks for the api
+		  (all given parameters for up/download/remove etc. should be plain files or dirs,
+		  no relative or absolutet paths, so do a chdir before doing anything if you use the api
+		  and want to be on the safe side)
+
+M 		- popup for upload resuming
+
+MB		- fix SFTP symlink support (1 vote)
+
+M 		- improve NFS support
+		  (mutithreading is not implemented yet
+		  and it does not work with some servers - need debug info first)
+
+MF		- enhance local and implement remote JFileChooser (1 vote)
+		  (not that easy, i have to find a way to extend JFileChooser or
+		  to write a new class)
+
+MU		- enhance downloadmanager support for SMB and SFTP and URL types
+		  (it depends on the protocol if features  like resuming and multiple conenctions are supported.
+		  some apis do not support resuming for example, for others it is imho not so important to have
+		  it so i do not implement it until somebody needs it - SMB for example, because most connections
+		  will be fast (lan) connections)
+
+L		- enable all supported protocols on the address bar
+		  (open urls ending with a / in the remote window, done for http/ftp)
+
+------------------------------------------------------------------------------------------------------
+
+H	- high priority
+M	- medium priority
+L	- low priority
+
+W	- lots of work
+F	- future, not assigned yet
+A	- already assigned
+
+U	- not sure if, how or in what kind of way this will happen
+
+C	- critical bug
+B	- normal bug
+
+--------------------------------------	Notes	------------------------------------------------
+
+
+- the server you want to open is not yet supported? just fill out a feature request a we will see what we can do
+- group permissions are not checked, it's possible that a file the user has access to is marked incorrect in very rare cases.
+  you are able to download the file even if it's marked red in such a case, of course. if one or more hardlinks in a directory are
+  missing this may cause the permissions not to be displayed due to malformed ls output, too
+- Kunststoff is listed twice sometimes (seems not to be my fault)
+- check windows-server-code (downloads.viaarena.com), VMS-server-code (rf1.cuis.edu)
+
+

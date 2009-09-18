@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Tue Sep 04 14:11:25 CEST 2007
+onejar.license.required=true
+manifest.classpath=./jdom.jar
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=GangliaHistoryMaker.jar
+manifest.mergeall=true
+manifest.mainclass=ganglia.controller.GangliaHistoryMaker
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

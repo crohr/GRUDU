@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Manual installation</TITLE>
+<META NAME="description" CONTENT="Manual installation">
+<META NAME="keywords" CONTENT="Grudu-UM">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Grudu-UM.css">
+
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html162"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html158"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html154"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html160"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html163"
+  HREF="node10.html">Interface presentation</A>
+<B> Up:</B> <A NAME="tex2html159"
+  HREF="node4.html">Requirements and installation</A>
+<B> Previous:</B> <A NAME="tex2html155"
+  HREF="node8.html">Automating the installation</A>
+ &nbsp; <B>  <A NAME="tex2html161"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00403000000000000000">
+Manual installation</A>
+</H2>
+
+<P>
+If you want to compile G<SMALL>RUDU</SMALL> sources, you need to install the Java build
+tool <SPAN  CLASS="textit">Ant</SPAN>&nbsp;<A NAME="tex2html12"
+  HREF="footnode.html#foot113"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A>. Then simply
+execute the following command: <code>ant GRUDU</code> for the compilation.
+If the compilation succeed, you will get a new jar file
+<SPAN  CLASS="textit">GRUDU.jar</SPAN> representing the program. Launching G<SMALL>RUDU</SMALL> can be
+done like a typical jar file: <code>java -jar GRUDU.jar</code>.
+
+<P>
+It is preferable that your first step with G<SMALL>RUDU</SMALL> is to configure
+it. The configuration window contains two tabs, the first corresponding
+to the user parameters while the second tab is relative to G<SMALL>RID'5000</SMALL> sites
+and cluster.
+
+<P>
+The figure&nbsp;<A HREF="node11.html#fig:cfg_tab1">4.1</A> represents the first tab of
+configuration windows, where we can found the following parameters:
+
+<UL>
+<LI><SPAN  CLASS="textit">Preferred access point</SPAN>: this is G<SMALL>RID'5000</SMALL> site G<SMALL>RUDU</SMALL> will
+  use to access to all the platform. Your account in this site must
+  contain your private ssh key file.
+</LI>
+<LI><SPAN  CLASS="textit">Username</SPAN>: your G<SMALL>RID'5000</SMALL> username.
+</LI>
+<LI><SPAN  CLASS="textit">Private SSH key file</SPAN>: your private ssh key file.
+</LI>
+<LI><SPAN  CLASS="textit">Password</SPAN>: the passphrase of your ssh key.
+</LI>
+</UL>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cfg_tab1"></A><A NAME="124"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.6:</STRONG>
+Configuration window: First tab</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV><IMG
+ WIDTH="333" HEIGHT="628" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="\includegraphics[width=0.6\linewidth]{figures/GruduCfg-Tab1.eps}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The second configuration tab shown in figure&nbsp;<A HREF="node11.html#fig:cfg_tab2">4.2</A> allows
+to configures the following parameters:
+
+<UL>
+<LI>Enabling/Disabling a cluster: by default all clusters are
+  disabled.
+</LI>
+<LI>Kadeploy partition for each cluster.
+</LI>
+</UL>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cfg_tab1"></A><A NAME="132"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.7:</STRONG>
+Configuration window: Second tab</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV><IMG
+ WIDTH="333" HEIGHT="628" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="\includegraphics[width=0.6\linewidth]{figures/GruduCfg-Tab2.eps}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html162"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html158"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html154"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html160"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html163"
+  HREF="node10.html">Interface presentation</A>
+<B> Up:</B> <A NAME="tex2html159"
+  HREF="node4.html">Requirements and installation</A>
+<B> Previous:</B> <A NAME="tex2html155"
+  HREF="node8.html">Automating the installation</A>
+ &nbsp; <B>  <A NAME="tex2html161"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+David Loureiro
+2007-07-04
+</ADDRESS>
+</BODY>
+</HTML>

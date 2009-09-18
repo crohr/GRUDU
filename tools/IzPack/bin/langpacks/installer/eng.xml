@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+
+<!-- The English langpack -->
+
+<langpack>
+
+    <!-- Heading messages START -->
+    <str id="CheckedHelloPanel.headline" txt="Welcome"/>
+    <str id="CompilePanel.headline" txt="Compile Java Sources"/>
+    <str id="ConditionalUserInputPanel.headline" txt="User Data"/>
+    <str id="ExtendedInstallPanel.headline" txt="Installation and Configuration"/>
+    <str id="FinishPanel.headline" txt="Installation Finished"/>
+    <str id="HelloPanel.headline" txt="Welcome"/>
+    <str id="HTMLInfoPanel.headline" txt="Informations"/>
+    <str id="HTMLLicencePanel.headline" txt="Licensing Agreements"/>
+    <str id="ImgPacksPanel.headline" txt="Select Installation Packages"/>
+    <str id="InfoPanel.headline" txt="Informations"/>
+    <str id="InstallPanel.headline" txt="Installation"/>
+    <str id="JDKPathPanel.headline" txt="JDK Path"/>
+    <str id="LicencePanel.headline" txt="Licensing Agreements"/>
+    <str id="PacksPanel.headline" txt="Select Installation Packages"/>
+    <str id="ProcessPanel.headline" txt="Perform External Processes"/>
+    <str id="ShortcutPanel.headline" txt="Shortcuts"/>
+    <str id="SimpleFinishPanel.headline" txt="Installation Finished"/>
+    <str id="SummaryPanel.headline" txt="Summary Configuration Data"/>
+    <str id="TargetPanel.headline" txt="Target Path"/>
+    <str id="UserInputPanel.headline" txt="User Data"/>
+    <str id="ConfigurationPresentationPanel.headline" txt="Configuration presentation"/>
+    <str id="CHANGELOGPanel.headline" txt="CHANGELOG"/>
+    <str id="DIETDashBoardInstallationPanel.headline" txt="DIET DashBoard configuration"/>
+    <str id="GruduInstallationPanel.headline" txt="GRUDU configuration"/>
+    
+    <!-- General installer strings -->
+    <str id="installer.title" txt="IzPack - Installation of "/>
+    <str id="installer.next" txt="Next"/>
+    <str id="installer.prev" txt="Previous"/>
+    <str id="installer.quit" txt="Quit"/>
+    <str id="installer.madewith" txt="(Made with IzPack - http://www.izforge.com/)"/>
+    <str id="installer.quit.title" txt="Are you sure you want to quit?"/>
+    <str id="installer.quit.message" txt="This will cancel the installation!"/>
+    <str id="installer.warning" txt="Warning!"/>
+    <str id="installer.yes" txt="Yes"/>
+    <str id="installer.no" txt="No"/>
+    <str id="installer.cancel" txt="Cancel"/> 
+    <str id="installer.error" txt="Error"/>
+    <str id="installer.help" txt="Help"/>
+    <str id="installer.step" txt="Step"/>
+    <str id="installer.of" txt="of"/>
+    
+    <!-- Uninstaller specific strings -->
+    <str id="uninstaller.warning" txt="This will remove the installed application(s)!"/>
+    <str id="uninstaller.destroytarget" txt=" Force the deletion of "/>
+    <str id="uninstaller.uninstall" txt="Uninstall"/>
+    
+    <!-- The strings for the 'official' IzPack plugins -->
+    <str id="HelloPanel.welcome1" txt="Welcome to the installation of "/>
+    <str id="HelloPanel.welcome2" txt="!"/>
+    <str id="HelloPanel.authors" txt="This software is developed by: "/>
+    <str id="HelloPanel.url" txt="The homepage is at: "/>
+    
+    <str id="PrinterSelectPanel.select_printer" txt="Select the printer to use for initial setup and testing." />
+
+    <str id="CheckedHelloPanel.productAlreadyExist0" txt="This product is already installed on this computer under the path "/>
+    <str id="CheckedHelloPanel.productAlreadyExist1" txt=" . Are you sure you want to install another entity?"/>
+    <str id="CheckedHelloPanel.infoOverUninstallKey" txt="The uninstall key will be named: " />
+
+    <str id="LicencePanel.info" txt="Please read the following license agreement carefully:"/>
+    <str id="LicencePanel.agree" txt="I accept the terms of this license agreement."/>
+    <str id="LicencePanel.notagree" txt="I do not accept the terms of this license agreement."/>
+    <str id="LicencePanel.yes" txt="Yes"/>
+    <str id="LicencePanel.no" txt="No"/>
+    
+    <str id="InfoPanel.info" txt="Please read the following information: "/>
+    
+    <str id="PathInputPanel.required" txt="The chosen directory should exist."/>
+    <str id="PathInputPanel.notValid" txt="The chosen directory does not contain the required product."/>
+
+    <str id="TargetPanel.info" txt="Select the installation path: "/>
+    <str id="TargetPanel.browse" txt="Browse..."/>
+    <str id="TargetPanel.warn" 
+         txt="The directory already exists! Are you sure you want to install here and possibly overwrite existing files?"/>
+    <str id="TargetPanel.empty_target"
+         txt="You have not specified a target location! Is this correct?"/>
+	<str id="TargetPanel.createdir" txt="The target directory will be created: " />
+    <str id="TargetPanel.nodir" 
+         txt="This file is not a directory! Please choose a directory!"/>
+    <str id="TargetPanel.notwritable" 
+         txt="This directory can not be written! Please choose another directory!"/>
+    
+    <str id="JDKPathPanel.extendedIntro" txt="The installed application needs a JDK between version ${JDKPathPanel.minVersion} and ${JDKPathPanel.maxVersion}. A java runtime environment (JRE) will be not sufficient."/>
+    <str id="JDKPathPanel.intro" txt="The installed application needs a JDK. A java runtime environment (JRE) will be not sufficient."/>
+    <str id="JDKPathPanel.info" txt="Select the JDK path:"/>
+    <str id="JDKPathPanel.badVersion1" txt="The chosen JDK has the wrong version (available: "/>
+    <str id="JDKPathPanel.badVersion2" txt=" required: "/>
+    <str id="JDKPathPanel.badVersion3" txt=") should this JDK be used anyway?"/>
+
+    <str id="PacksPanel.info" txt="Select the packs you want to install:"/>
+    <str id="PacksPanel.tip" txt="Note: greyed out packs are required."/>
+    <str id="PacksPanel.space" txt="Total space Required: "/>
+    <str id="PacksPanel.freespace" txt="Available space: "/>
+    <str id="PacksPanel.description" txt="Description"/>
+    <str id="PacksPanel.dependencyList" 
+        txt="The selected package requires the following packs to be installed"/>
+    <str id="ImgPacksPanel.dependencyList" txt="Dependencies"/>
+	<str id="PacksPanel.notEnoughSpace" 
+	    txt="Disk space required for the installation exceeds available disk space."/>
+    <str id="PacksPanel.notAscertainable" txt="not ascertainable"/>
+    
+    <str id="InstallPanel.info" txt="Click 'Install!' to begin the installation process"/>
+    <str id="InstallPanel.install" txt="Install!"/>
+    <str id="InstallPanel.tip" txt="Pack installation progress:"/>
+    <str id="InstallPanel.begin" txt="[Nothing]"/>
+    <str id="InstallPanel.finished" txt="[Finished]"/>
+    <str id="InstallPanel.progress" txt="Overall installation progress:"/>
+    <str id="InstallPanel.overwrite.title" txt="File already exists"/>
+    <str id="InstallPanel.overwrite.question" txt="The following file already exists. Should it be overwritten?"/>
+    
+    <str id="FinishPanel.success" txt="Installation has completed successfully."/>
+    <str id="FinishPanel.done" txt="Done"/>
+    <str id="FinishPanel.fail" txt="Installation has failed!"/>
+    <str id="FinishPanel.uninst.info" txt="An uninstaller program has been created in: "/>
+    <str id="FinishPanel.auto" txt="Generate an automatic installation script"/>
+    <str id="FinishPanel.auto.tip" 
+         txt="Use this script to repeat this installation on other computers."/>
+    
+    <str id="ImgPacksPanel.packs" txt="The following packs are available:"/>
+    <str id="ImgPacksPanel.snap" txt="Package snapshot:"/>
+    <str id="ImgPacksPanel.checkbox" txt=" Install this pack"/>
+    
+    <str id="ShortcutPanel.headline" txt="Setup Shortcuts"/>    
+    <str id="ShortcutPanel.regular.list" txt="Select a Program Group for the Shortcuts:"/>	
+		<str id="ShortcutPanel.regular.default" txt="Default"/>
+    <str id="ShortcutPanel.regular.desktop" txt="Create additional shortcuts on the desktop"/>
+    <str id="ShortcutPanel.regular.StartMenu:Start-Menu" txt="Start-Menu"/>
+    <str id="ShortcutPanel.regular.StartMenu:K-Menu" txt="K-Menu"/>
+	                                                          <!-- "StartMenu" is a placeholder will be replaced at runtime -->
+    <str id="ShortcutPanel.regular.create" txt="Create shortcuts in the StartMenu"/>
+    <str id="ShortcutPanel.regular.userIntro" txt="create shortcut for:"/>
+    <str id="ShortcutPanel.regular.currentUser" txt="current user"/>
+    <str id="ShortcutPanel.regular.allUsers" txt="all users"/>
+
+    <str id="ShortcutPanel.alternate.apology" txt="We are sorry but IzPack does not support the creation of shortcuts on this operating system. To create the shortcuts, please refer to your operating system manual."/>
+    <str id="ShortcutPanel.alternate.targetsLabel" txt="The following is a list of targets that the manufacturer of this software product wanted you to have access to."/>
+    <str id="ShortcutPanel.alternate.textFileExplanation" txt="You can save detailed information about the application targets in a text file for later reference."/>
+    <str id="ShortcutPanel.alternate.saveButton" txt="Save Text File"/>
+    
+    <str id="ShortcutPanel.textFile.header" txt="Shortcut Information\n====================\n\nThe following is a listing of all relevant information about the intended\nshortcuts. This information should make it possible to create shortcuts manually.\n"/>
+    <str id="ShortcutPanel.textFile.name"         txt="Shortcut          : "/>
+    <str id="ShortcutPanel.textFile.location"     txt="Intended Location : "/>
+    <str id="ShortcutPanel.textFile.description"  txt="Description       : "/>
+    <str id="ShortcutPanel.textFile.target"       txt="Shortcut Target   : "/>
+    <str id="ShortcutPanel.textFile.command"      txt="Command Line      : "/>
+    <str id="ShortcutPanel.textFile.iconName"     txt="Icon File         : "/>
+    <str id="ShortcutPanel.textFile.iconIndex"    txt="Icon Index        : "/>
+    <str id="ShortcutPanel.textFile.work"         txt="Working Directory : "/>
+
+    <str id="ShortcutPanel.location.desktop"      txt="Desktop"/>
+    <str id="ShortcutPanel.location.applications" txt="Applications Menu"/>
+    <str id="ShortcutPanel.location.startMenu"    txt="Start Menu"/>
+    <str id="ShortcutPanel.location.startup"      txt="Startup Group"/>
+    
+    <str id="UserInputPanel.error.caption"        txt="Input Problem"/>
+    <str id="UserInputPanel.search.autodetect"    txt="Autodetect"/>
+
+    <!-- more descriptive error message would be cool, like specifying what file we looked for -->
+    <str id="UserInputPanel.search.autodetect.failed.message"    txt="Autodetection failed."/>
+    <str id="UserInputPanel.search.autodetect.failed.caption"    txt="Autodetection failed."/>
+    <str id="UserInputPanel.search.autodetect.tooltip"           txt="Check for the file or directory in the paths given above."/>
+    <str id="UserInputPanel.search.location"           txt="Enter location of {0}."/>
+    <str id="UserInputPanel.search.location.checkedfile" txt="The existence of {0} is checked."/>
+    <str id="UserInputPanel.search.browse"           txt="Browse..."/>
+    <str id="UserInputPanel.search.wrongselection.message"   txt="The file or directory you choose either does not exist or is not appropiate."/>
+    <str id="UserInputPanel.search.wrongselection.caption"   txt="Invalid selection."/>
+
+    <str id="CompilePanel.heading" txt="Compilation" />
+    <str id="CompilePanel.tip" txt="Job compilation progress:" />
+    <str id="CompilePanel.browse" txt="Browse..." />
+    <str id="CompilePanel.browse.approve" txt="Use as compiler" />
+    <str id="CompilePanel.start" txt="Start" />
+    <str id="CompilePanel.progress.initial" txt="[Press Start button]" />
+    <str id="CompilePanel.progress.finished" txt="[Finished]" />
+    <str id="CompilePanel.progress.overall" txt="Overall compilation progress:" />
+    <str id="CompilePanel.error" txt="Compilation failed" />
+    <str id="CompilePanel.error.reconfigure" txt="Reconfigure" />
+    <str id="CompilePanel.error.ignore" txt="Ignore" />
+    <str id="CompilePanel.error.abort" txt="Abort" />
+    <str id="CompilePanel.error.seebelow" txt="See below for the failed command and its output." />
+    <str id="CompilePanel.error.nofiles" txt="Error while scanning for files for compilation." />
+    <str id="CompilePanel.error.compilernotfound" txt="The compiler could not be run." />
+    <str id="CompilePanel.error.invalidarguments" txt="Invalid arguments provided to the compiler." />
+    <str id="CompilePanel.error.noclassfile" txt="The compiler did not produce a class file for the source file " />
+    <str id="CompilePanel.choose_compiler" txt="Compiler to use:" />
+    <str id="CompilePanel.additional_arguments" txt="Additional compiler arguments:" />
+
+    <str id="ProcessPanel.heading" txt="Processing" />
+
+    <!-- Strings for the summary of panels - START -->
+    <str id="SummaryPanel.info" txt="Ready to install. Important data are listed below. Press &quot;Next&quot; to start installation, "/>
+    <str id="TargetPanel.summaryCaption" txt="Installation path"/>
+    <str id="JDKPathPanel.summaryCaption" txt="JDK path"/>
+    <str id="PacksPanel.summaryCaption" txt="Chosen installation packs"/>
+    <str id="ImgPacksPanel.summaryCaption" txt="Chosen installation packs"/>
+    <!-- Strings for the summary of panels - END -->
+
+    <!-- Strings for the Registry -->
+    <str id="functionFailed.RegOpenKeyEx" txt="Cannot open registry key {0}\\{1}."/>
+    
+    <!-- Add your own panels specific strings here if you need or use a custom langpack with the same syntax referred as resoure CustomLangpack.xml_[ISO3] -->   
+
+    <str id="installer.reversetitle" txt="$APP_NAME $APP_VER - IzPack Installation Wizzard"/>
+
+    <str id="PacksPanel" txt="Selection of the modules to install" />
+    <str id="PacksPanel.description" txt="Description"/>
+
+    <!-- translations for the DIET DashBoard -->
+
+    <str id="ddb_base.package" txt="Base"/>
+    <str id="ddb_grudu_jftp.package" txt="GRUDU Module -- JFTP"/>
+    <str id="ddb_grudu_ganglia.package" txt="GRUDU Module -- Ganglia Analyzer"/>
+    <str id="ddb_workflow.package" txt="Workflow"/>
+    <str id="ddb_vizdiet.package" txt="VizDIET" />
+    <str id="ddb_xmlgodietgenerator.package" txt="XMLGoDIETGenerator" />
+    <str id="ddb_doc.package" txt="Documentation (of the DIET_DashBoard)"/>
+    <str id="ddb_sources.package" txt="Sources of the DIET_DashBoard" />
+    <str id="ddb_base.package.description" txt="These are the base components of the DIET_DashBoard that you need to realize some reservations, create a DIET hierarchy, map your hierarchy on your reservation and then deploy it on the grid"/>
+    <str id="ddb_grudu_jftp.package.description" txt="This module adds to GRUDU a tool for the trasfert of data between your local machien and Grid'5000, but also between the machines of Grid'5000"/>
+	<str id="ddb_grudu_ganglia.package.description" txt="This module adds to GRUDU the Ganglia support (a monitoring tool) allowing you to get hardware information on Grid'5000 machines but also real-time information on your reserved machines"/> 
+    <str id="ddb_workflow.package.description" txt="If you want to use workflow for DIET you should enable this pack" />
+    <str id="ddb_vizdiet.package.description" txt="If you want to use VizDIET to monitor the execution of your platform you should enable this pack" />
+    <str id="ddb_xmlgodietgenerator.package.description" txt="If you want to use the XMLgoDIETGenerator to produce very easily goDIET input files through a user-friendly wizzard you should enable this pack"/>
+    <str id="ddb_doc.package.description" txt="If you want to get the documentation of the DIET_DashBoard you should enable this pack"/>
+	<str id="ddb_sources.package.description" txt="If you want to get the sources of the DIET_DashBoard you should enable this pack"/>
+	<str id="DIETDashBoardInstallationPanel.kadeploy_partition" txt="Kadeploy partition"/>
+	<str id="DIETDashBoardInstallationPanel.none" txt="None"/>
+	<str id="DIETDashBoardInstallationPanel.user_configuration" txt="User Configuration"/>
+	<str id="DIETDashBoardInstallationPanel.misc" txt="Misc" />
+	<str id="DIETDashBoardInstallationPanel.username" txt="User name"/>
+	<str id="DIETDashBoardInstallationPanel.ssh_key_file" txt="SSH private key file"/>
+	<str id="DIETDashBoardInstallationPanel.passphrase" txt="Passphrase"/>
+	<str id="DIETDashBoardInstallationPanel.preferred_acces_point" txt="Preferred acces point"/>
+	<str id="DIETDashBoardInstallationPanel.ssh_key_file_tooltip" txt="the path must be an absolute path"/>
+	<str id="DIETDashBoardInstallationPanel.browse" txt="Browse" />
+	<str id="DIETDashBoardInstallationPanel.proceed_configuration" txt="Write configuration"/>
+	<str id="DIETDashBoardInstallationPanel.waiting_frame_title" txt="Remote DIET directories creation"/>
+    <str id="DIETDashBoardInstallationPanel.waiting_frame_description_text" txt="Installing the necessary files on the Grid5000 frontals" />
+    <str id="DIETDashBoardInstallationPanel.waiting_frame_connection_text" txt="Opening the connection"/>
+    <str id="DIETDashBoardInstallationPanel.working_on_site" txt="Working on site : "/>
+    <str id="DIETDashBoardInstallationPanel.godiet_runtime_scratch" txt="GoDIET scratch runtime"/>
+    <str id="DIETDashBoardInstallationPanel.import" txt="Import"/>
+    <str id="DIETDashBoardInstallationPanel.import_tooltip" txt="Import the parameters of an other site"/>
+    <str id="DIETDashBoardInstallationPanel.error_site_selection_message" txt="No site seected or the site was not found"/>
+    <str id="DIETDashBoardInstallationPanel.godiet_scratch" txt="GoDIET scratch"/>
+    <str id="DIETDashBoardInstallationPanel.unique_dirs" txt="Use unique dirs"/>
+    <str id="DIETDashBoardInstallationPanel.save_stderr" txt="Save stdOut"/>
+    <str id="DIETDashBoardInstallationPanel.save_stdout" txt="Save stdErr"/>
+    <str id="DIETDashBoardInstallationPanel.debug_level" txt="Debug level"/>
+
+    <!-- Translations for GRUDU -->
+
+    <str id="grudu_base.package" txt="Base"/>
+    <str id="grudu_jftp.package" txt="JFTP"/>
+    <str id="grudu_ganglia.package" txt="Ganglia Analyzer module"/>
+    <str id="grudu_doc.package" txt="Documentation of GRUDU"/>
+    <str id="grudu_sources.package" txt="Sources of the GRUDU" />
+    <str id="grudu_jftp.package" txt="JFTP module" />
+    <str id="grudu_base.package.description" txt="These are the base components of GRUDU"/>
+    <str id="grudu_doc.package.description" txt="If you want to get the documentation of GRUDU you should enable this pack"/>
+	<str id="grudu_sources.package.description" txt="If you want to get the sources of GRUDU you should enable this pack"/>
+    <str id="grudu_jftp.package.description" txt="This module adds to GRUDU a tool for the trasfert of data between your local machien and Grid'5000, but also between the machines of Grid'5000"/>
+	<str id="grudu_ganglia.package.description" txt="This module adds to GRUDU the Ganglia support (a monitoring tool) allowing you to get hardware information on Grid'5000 machines but also real-time information on your reserved machines"/> 
+	<str id="GruduInstallationPanel.kadeploy_partition" txt="Kadeploy partition"/>
+	<str id="GruduInstallationPanel.none" txt="None"/>
+	<str id="GruduInstallationPanel.user_configuration" txt="User configuration"/>
+	<str id="GruduInstallationPanel.misc" txt="Misc" />
+	<str id="GruduInstallationPanel.username" txt="User name"/>
+	<str id="GruduInstallationPanel.ssh_key_file" txt="SSH private key file"/>
+	<str id="GruduInstallationPanel.passphrase" txt="Passphrase"/>
+	<str id="GruduInstallationPanel.preferred_acces_point" txt="Preferred acces point"/>
+	<str id="GruduInstallationPanel.ssh_key_file_tooltip" txt="the pah should be an absolute path"/>
+	<str id="GruduInstallationPanel.browse" txt="Browse" />
+	<str id="GruduInstallationPanel.proceed_configuration" txt="Write configuration"/>
+	<str id="GruduInstallationPanel.waiting_frame_title" txt="Remote DIET directories creation"/>
+    <str id="GruduInstallationPanel.waiting_frame_description_text" txt="Installing the necessary files on the Grid5000 frontals" />
+    <str id="GruduInstallationPanel.waiting_frame_connection_text" txt="Opening the connection"/>
+    <str id="GruduInstallationPanel.working_on_site" txt="Working on site : "/>
+
+</langpack>

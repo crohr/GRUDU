@@ -1,0 +1,103 @@
+GRUDU : Grid Reservation Utility for Deployment Usage (http://grudu.gforge.inria.fr)
+
+version 1.1.3 : 
+
+* News : GRUDU is now available on the INRIA GForge ! 
+
+* Bug corrections : (http://gforge.inria.fr/tracker/?atid=4989&group_id=1253&func=browse)
+
+ - 7601 : Added the used of the command passed in the properties to the
+JCTerm. Now the command is executed after having logged on the
+fronted of the node.
+
+ - 7602 : it seems that types and queues were misused. 
+GRUDU now looks at the types to see whether the job is of the following types 'allow_classic_ssh" or "deploy".
+If it is the cas then the job uses ssh, else it used oarsh to log on the job.
+Moreover there was a problem in the copy command used to transfer the jar file from the preferred access frontend to the frontend of the job.
+
+ - 7603 : The command line used in the UnixLauncher.sh has been modified to take into account the solution for the "grey box" bug.
+Here is the new command line : 
+export AWT_TOOLKIT=MToolkit; java $* -jar GRUDU.jar
+
+A new feature has been added at the same time : you can now specify parameters that can be given to the java command.
+For example memory : -Xmx1024m -Xms1024m with the following command:
+
+$ ./UnixLauncher.sh -Xmx1024m -Xms1024m
+
+ - 7605 : - Problem : when site with node having disk/swap/memory are displayed an error was thrown with the meterchart asking only maximum value strictly positive.
+  - Solution : when a node has not strickly positive values for total disk/memory/swap space, a message is written on the jpanel instead of the classical chart and a error message is displayed in the standard error.
+This message is the proof of a problem on the distant machine.
+
+* Updates : 
+
+ - Sources are now compatible with the eclipse project management
+ - Clean up concerning the extraction of GRUDU from the DIET DashBoard
+ - Update of the Grid'5000 configuration
+ - Adding an option (-D 4) for kadeploy output information 
+
+version 1.1.2 : 
+
+* Bugs correction (http://graal.ens-lyon.fr/bugzilla) :
+
+ - bug 53 : when installing or using GRUDU there was a problem connecting to the
+  rennes site, because of the use of the former naming convention. Now that the
+  new one is applied, GRUDU uses addresses starting with access.
+
+* Updates :
+
+ - updating the number of nodes for the sagittaire cluster of the Lyon site.
+
+version 1.1.1 :
+
+* Bugs correction (http://graal.ens-lyon.fr/bugzilla) : 
+
+ - bug 47 : the grid'5000 time in the reservation frame is nomore taken from the
+ preferred access frontale but from the actual access frontale. If this fails the time
+ is computed based on the local machien time.
+ 
+ - bug 48 : the deploy jobs were displayed as default jobs. This bug is now resolved.
+ the parsing was not well realized (the type variable was used instead of the types 
+ variable).
+
+version 1.1.0 :
+
+* New features :
+
+ - OAR2 & OAR1 compliant
+ - Ganglia features (site & job levels)
+ - JFTP Module
+ - The user can now be aware of the number of nodes he/she has reserved
+ - the SSH passphrase is now stores in memory and no more in a file
+ - OARGridSub beahaviour available
+ - the user can now run a script at the reservation start-up.
+ 
+* Updates :
+
+ - Update of the User's Manual for GRUDU. Also available at 
+ http://graal.ens-lyon.fr/DIET/wiki/doku.php?id=grudu:grudu_grid_5000_reservation_utility_for_deployment_usage
+  and https://www.grid5000.fr/mediawiki/index.php/GRUDU
+  
+ - Update of the GRUDU Help.
+
+* Correction of bugs (http//graal.ens-lyon.fr/bugzilla) : 
+
+ - bug 37 : It was about the wrong number of nodes on Nancy. In fact, it was a 
+ problem of properties when reserving some nodes. Now you have a extra panel in 
+ the reservation frame that allows you to specify some properties for each clusters.
+ 
+ - bug 39 : Allows the OAR grid sub behaviour when reserving (It means that when
+ you want to reserve on the grid, if one of the reservation fails, all the 
+ already realized jobs are deleted). The choice is realized at the reservation time 
+ by checking/uncheking a checkbox in the reservation panel.
+  
+ - bug 40 : To solve the lack of reservation status after the submission, a 
+ reservation status frame has been added. It displays the statuses of the different
+ submissions realized by this reservation.
+ 
+ - bug 45 : The date and time are now fixed relatively to the CET (Central European
+ Timezone) Timezone, the one of Grid'5000.
+ 
+ - bug 38 : Explanations are now given to the user concerning the information asked
+ during the installation. These are mandatory for the creation of remote hierarchies 
+ of files on Grid'5000 used for operations such as the deployment of images through
+ Kadeploy.

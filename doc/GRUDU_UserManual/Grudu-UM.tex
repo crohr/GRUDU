@@ -1,0 +1,237 @@
+%****************************************************************************%
+%* Grudu User Manual                                                        *%
+%*                                                                          *%
+%* Author(s):                                                               *%
+%* - Abdelkader AMAR (Abdelkader.Amar@ens-lyon.fr)                          *%
+%* - David LOUREIRO (David.Loureiro@ens-lyon.fr)                            *%
+%*                                                                          *%
+%* $LICENSE$                                                                *%
+%****************************************************************************%
+%* $Id: Grudu-UM.tex,v 1.7 2007/12/10 09:36:25 dloureir Exp $
+%* $Log: Grudu-UM.tex,v $
+%* Revision 1.7  2007/12/10 09:36:25  dloureir
+%* New version of GRUDU
+%*
+%* Revision 1.6  2007/11/08 16:53:48  dloureir
+%* Adding the ganglia part in the User's Manual
+%*
+%* Revision 1.5  2007/11/08 11:30:53  dloureir
+%* Troubleshooting chapter concerning the possible problems happening during the installation of GRUDU and its use.
+%*
+%* Revision 1.4  2007/10/25 13:27:16  dloureir
+%* Splitting the source files for reuse in the DietDashboard User's Manual
+%*
+%* Revision 1.3  2007/07/18 15:33:54  dloureir
+%* Some modifications concerning the figures and their labels with also some modifications for the license at the end
+%*
+%* Revision 1.2  2007/07/17 16:38:51  dloureir
+%* Update of the User's Manual
+%*
+%* Revision 1.1  2007/07/04 09:54:41  dloureir
+%* Adding some corrections to the User Manual and updating it with the last features. Also renaming it to GRUDU_UserManual in order to later create the DIETDashBoard_UserManual.
+%*
+%* Revision 1.13  2007/05/21 08:52:12  dloureir
+%* Update of the introduction with the mailing lists for grudu-usr et grudu-dev
+%*
+%* Revision 1.12  2007/05/17 13:38:14  ecaron
+%* Some english corrections
+%*
+%* Revision 1.11  2007/05/14 09:44:59  dloureir
+%* adding the closing beacon of an example of configuration file
+%*
+%* Revision 1.10  2007/05/14 09:26:01  dloureir
+%* Adding some information about the g5K.xml configuration file
+%*
+%* Revision 1.9  2007/05/11 15:24:36  dloureir
+%* adding appendix command
+%*
+%* Revision 1.8  2007/05/11 15:15:05  dloureir
+%* Adding some information in the Kadeploy chapter. Adding hyperref
+%*
+%* Revision 1.7  2007/05/11 13:57:19  dloureir
+%* Adding table of contents, list of figures and some information
+%*
+%* Revision 1.6  2007/05/11 13:09:44  dloureir
+%*  - Interface presentation, monitoring Grid'5000 chapter done
+%*  - The chapter and the section headings are changed
+%*  - The page style is changed
+%*
+%* Revision 1.5  2007/05/11 08:40:40  dloureir
+%* Adding an interface presentation chapter, moving the monitoring Grid'5000 chapter and adding some information and a figure
+%*
+%* Revision 1.4  2007/05/11 07:49:03  dloureir
+%* Correction of some errors
+%*
+%* Revision 1.3  2007/05/10 12:51:21  dloureir
+%* Adding the GRUDU logo on the title page
+%*
+%* Revision 1.2  2007/05/10 12:35:57  dloureir
+%* Adding the installation through the use of the GRUDU installer created with IzPack
+%*
+%* Revision 1.1  2007/05/09 11:53:46  aamar
+%* Initial revision:
+%*   - short introduction (to complete)
+%*   - requirement and manual installation (with lzpack in progress).
+%*   - Oar interface (to complete)
+%*   - Configuration files (to complete).
+%*
+%****************************************************************************%
+
+\documentclass[a4paper]{report}
+\usepackage{a4wide}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+\usepackage{palatino}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage{url}
+\usepackage{float}
+\usepackage[dvipdf]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{verbatim}
+
+%****************************************************************************%
+% Some commands
+\newcommand{\grudu}{\textsc{Grudu}\xspace}
+\newcommand{\gfk}{\textsc{Grid'5000}\xspace}
+\newcommand{\fixme}[1]{\fbox{\textsl{{\bf #1}}}}
+\makeatletter
+ \def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\def\@makechapterhead#1{
+  \vspace*{10\p@}
+  {\parindent \z@
+    {\raggedleft \reset@font
+      \scshape \@chapapp{} \thechapter\par\nobreak}
+    \par\nobreak
+    \vspace*{30\p@}
+    \interlinepenalty\@M
+    {\raggedright \Huge \bfseries #1}
+    \par\nobreak
+    \hrulefill
+    \par\nobreak
+    \vskip 100\p@
+  }}
+\def\@makeschapterhead#1{
+  \vspace*{10\p@}
+  {\parindent \z@
+    {\raggedleft \reset@font
+      \scshape \vphantom{\@chapapp{} \thechapter}\par\nobreak}
+    \par\nobreak
+    \vspace*{30\p@}
+    \interlinepenalty\@M
+    {\raggedright \Huge \bfseries #1}
+    \par\nobreak
+    \hrulefill
+    \par\nobreak
+    \vskip 100\p@
+  }}
+  \def\section{\@ifstar\unnumberedsection\numberedsection}
+\def\numberedsection{\@ifnextchar[%]
+  \numberedsectionwithtwoarguments\numberedsectionwithoneargument}
+\def\unnumberedsection{\@ifnextchar[%]
+  \unnumberedsectionwithtwoarguments\unnumberedsectionwithoneargument}
+\def\numberedsectionwithoneargument#1{\numberedsectionwithtwoarguments[#1]{#1}}
+\def\unnumberedsectionwithoneargument#1{\unnumberedsectionwithtwoarguments[#1]{#1}}
+\def\numberedsectionwithtwoarguments[#1]#2{
+  \ifhmode\par\fi
+  \removelastskip
+  \vskip 3ex\goodbreak
+  \refstepcounter{section}
+  \begingroup
+  \noindent
+  \leavevmode\Large\bfseries\raggedright
+  \thesection\ #2\par\nobreak
+  \endgroup
+  \noindent\hrulefill\nobreak
+  \vskip 2ex\nobreak
+  \addcontentsline{toc}{section}{
+    \protect\numberline{\thesection}
+    #1}
+  }
+\def\unnumberedsectionwithtwoarguments[#1]#2{
+  \ifhmode\par\fi
+  \removelastskip
+  \vskip 3ex\goodbreak
+%  \refstepcounter{section}
+  \begingroup
+  \noindent
+  \leavevmode\Large\bfseries\raggedright
+%  \thesection\
+  #2\par\nobreak
+  \endgroup
+  \noindent\hrulefill\nobreak
+  \vskip 2ex\nobreak
+  \addcontentsline{toc}{section}{
+%    \protect\numberline{\thesection}
+    #1}
+  }
+%****************************************************************************%
+
+
+\title{\includegraphics[width=\linewidth]{figures/GRUDU_logo.eps}
+\
+\Huge{User's Manual}\\
+~\\
+\Large{Version 1.1.1}\\
+\
+}
+\author{Abdelkader \textsc{Amar}\\
+David \textsc{Loureiro}}
+\date{}
+
+\begin{document}
+\sloppy
+\maketitle
+%*************************************************%
+% Page style                                      %
+\pagestyle{fancy}                                 %
+\lfoot[\thepage]{GRUDU User's Manual v1.1.0}      %
+\rfoot[GRUDU User's Manual]{\thepage}             %
+\cfoot{}                                          %
+\renewcommand{\footrulewidth}{\headrulewidth}     %
+%*************************************************%
+
+\tableofcontents
+\listoffigures
+
+% inclusion de GUM_introduction.tex
+\include{GUM_introduction}
+
+% inclusion de GUM_requirements.tex
+\include{GUM_requirements}
+
+% inclusion de GUM_interface.tex
+\include{GUM_interface}
+
+% inclusion de GUM_resources.tex
+\include{GUM_resources}
+
+% inclusion de GUM_monitoring.tex
+\include{GUM_monitoring}
+
+%inclusion de GUM_Ganglia.tex
+\include{GUM_Ganglia}
+
+% inclusion de GUM_JFTP.tex
+\include{GUM_JFTP}
+
+% inclusion de GUM_Kadeploy.tex
+\include{GUM_Kadeploy}
+
+% inclusion de GUM_applications.tex
+\include{GUM_applications}
+
+% inclusion de GUI_Troubleshooting.tex
+\include{GUM_troubleshooting}
+
+% inclusion de GUM_annexes.tex
+\include{GUM_annexes}
+
+% inclusion de GUM_License.tex
+\include{GUM_License}
+
+\end{document}
+
+% LocalWords:  GRUDU Abdelkader AMAR LOUREIRO IzPack

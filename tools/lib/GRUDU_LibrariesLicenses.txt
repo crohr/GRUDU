@@ -1,0 +1,46 @@
+This file resumed the licenses of the libraries involved in the GRUDU.
+The different licenses are given in the licenses directory.
+
+ - jung-1.7.4.jar : the Java Universal Network/Graph Framework--is a software library that provides a common and extendible language for the modeling, analysis, and visualization of data that can be represented as a graph or network. It is written in Java, which allows JUNG-based applications to make use of the extensive built-in capabilities of the Java API, as well as those of other existing third-party Java libraries.
+   JUNG is licensed and made freely available under the Berkeley Software Distribution (BSD) license.
+   
+ - colt.jar : This distribution consists of several free Java libraries, for user convenience bundled under one single uniform umbrella. Namely the Colt library, the Jet library, the CoreJava library, and the Concurrent library. The Colt library provides fundamental general-purpose data structures optimized for numerical data, such as resizable arrays, dense and sparse matrices (multi-dimensional arrays), linear algebra, associative containers and buffer management. The Jet library contains mathematical and statistical tools for data analysis, powerful histogramming functionality, Random Number Generators and Distributions useful for (event) simulations, and more. The CoreJava library contains C-like print formatting. The Concurrent library contains standardized, efficient utility classes commonly encountered in parallel & concurrent programming.
+   Packages cern.colt* , cern.jet*, cern.clhep
+
+        Copyright (c) 1999 CERN - European Organization for Nuclear Research.
+
+        Permission to use, copy, modify, distribute and sell this software and its documentation for any purpose is hereby granted without fee, provided that the above copyright notice appear in all copies and that both that copyright notice and this permission notice appear in supporting documentation. CERN makes no representations about the suitability of this software for any purpose. It is provided "as is" without expressed or implied warranty.
+
+    Packages hep.aida.*
+
+        Written by Pavel Binko, Dino Ferrero Merlino, Wolfgang Hoschek, Tony Johnson, Andreas Pfeiffer, and others. Check the FreeHEP home page for more info. Permission to use and/or redistribute this work is granted under the terms of the LGPL License, with the exception that any usage related to military applications is expressly forbidden. The software and documentation made available under the terms of this license are provided with no warranty. 
+
+ - common-collections-3.2 : Commons-Collections seek to build upon the JDK classes by providing new interfaces, implementations and utilities. 
+   All source and documentation of the Commons project is copyrighted by The Apache Software Foundation, and made available under the Apache V2.0 license.
+   
+ - trilead-ssh2-build211 :   Trilead SSH-2 for Java is a freely available open-source library which implements the SSH-2 protocol in pure Java (tested on J2SE 1.4.2 and 5.0). It allows one to connect to SSH servers from within Java programs. It supports SSH sessions (remote command execution and shell access), local and remote port forwarding, local stream forwarding, X11 forwarding, SCP and SFTP. There are no dependencies on any JCE provider, as all crypto functionality is included.
+ 
+ - jcommon-1.0.6 :  JCommon is a collection of useful classes used by JFreeChart, JFreeReport and other projects. The library contains the common classes, which provide some global utility functionality for both GUI and non-GUI applications.
+   JCommon is licensed under the terms of the GNU Lesser General Public Licence (LGPL).
+   
+ - jfreechart-1.0.3 and jfreechart-1.0.3-experimental : JFreeChart is a free 100% Java chart library that makes it easy for developers to display professional quality charts in their applications.
+   JFreeChart is "open source" or, more specifically, free software. It is distributed under the terms of the GNU Lesser General Public Licence (LGPL), which permits use in proprietary applications.
+   
+ - jcraft : JCraft is a mix of the JCTerm, JSch and JZLib libraries distributed by the JCraft. JCTerm(JCraft's Term) is a pure Java VT100 terminal emulator for SSH2. This terminal emulator also allows you to enjoy port forwarding, X11 forwarding, etc.
+   JCTerm is licensed under GNU LGPL and easily integrated into your programs.
+    
+ - jcalendar-1.3.2 : JCalendar is a Java date chooser bean for graphically picking a date. JCalendar is composed of several other Java beans, a JDayChooser, a JMonthChooser and a JYearChooser. All these beans have a locale property, provide several icons (Color 16x16, Color 32x32, Mono 16x16 and Mono 32x32) and their own locale property editor. So they can easily be used in GUI builders. Also part of the package is a JDateChooser, a bean composed of an IDateEditor (for direct date editing) and a button for opening a JCalendar for selecting the date.
+   JCalendar is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation.
+   
+ - JavaHelp : JavaHelp is an open source software, a full-featured, platform-independent, extensible help system that enables you to incorporate online help in applets, components, applications, operating systems, and devices. Authors can also use the JavaHelp software to deliver online documentation for the Web and corporate intranet.
+   JavaHelp is provide under the SUN license.
+   
+ - liquidlnf : The goal of this project is to provide a look and feel based on the Mosfet Liquid KDE 3.x theme.
+   The liquid Look And Feel is licensed under the LGPL.
+   
+  - l2fprod-common-buttonbar, l2fprod-common-totd and l2fprod-common-tasks : Swing has lot of components built-in but still some are missing. This
+	project provides the developer community with these missing components, components inspired (copied?!) from modern user interfaces.
+	Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. 
+	You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and limitations under the License.

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<language>
+
+	<version value="1.0.0" />
+
+	<locale iso3code="fra" language="fran&#xE7;ais"/>
+
+	<author name="David Loureiro" />
+
+	<objects>
+
+		<diet>
+
+			<i18n>
+
+				<LanguageSelector>
+
+					<panelTitle>Sélécteur de Langue</panelTitle>
+					<validateText>Valider</validateText>
+					<cancelText>Annuler</cancelText>
+					<currentLanguageText>Langue courante :</currentLanguageText>
+
+				</LanguageSelector>
+
+			</i18n>
+
+		</diet>
+
+	</objects>
+
+</language>

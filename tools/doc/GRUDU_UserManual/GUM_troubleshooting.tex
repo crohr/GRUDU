@@ -1,0 +1,81 @@
+%****************************************************************************%
+%* Troubleshooting                                                          *%
+%*                                                                          *%
+%* Author(s):                                                               *%
+%* - Abdelkader AMAR (Abdelkader.Amar@ens-lyon.fr)                          *%
+%* - David LOUREIRO (David.Loureiro@ens-lyon.fr)                            *%
+%*                                                                          *%
+%* $LICENSE$                                                                *%
+%****************************************************************************%
+%* $Id: GUM_troubleshooting.tex,v 1.3 2007/11/29 16:03:21 dloureir Exp $
+%* $Log: GUM_troubleshooting.tex,v $
+%* Revision 1.3  2007/11/29 16:03:21  dloureir
+%* typo corrections
+%*
+%* Revision 1.2  2007/11/08 16:28:54  dloureir
+%* Adding some corrections and updates
+%*
+%* Revision 1.1  2007/11/08 11:30:53  dloureir
+%* Troubleshooting chapter concerning the possible problems happening during the installation of GRUDU and its use.
+%*
+%****************************************************************************%
+
+\chapter{Troubleshooting}
+
+Some problems can appear during the installation or during the use of \grudu.
+Here are some solutions :
+\begin{itemize}
+  \item \textbf{\underline{Question :}} \textbf{I am under Gentoo, and when I am launching the
+  installer/\grudu, I get the following error :}\\
+  \begin{verbatim}
+  	java: xcb_xlib.c:50: xcb_xlib_unlock: Assertion `c->xlib.lock' failed.
+Aborted
+  \end{verbatim}
+	\textbf{\underline{Answer : }} This problem come from the Java runtime you are
+	using. Simply run the following peace of code in a console and you will be able to run your java application :
+	\begin{verbatim}
+    CFLAGS="-DNDEBUG" emerge -av1 libxcb
+    \end{verbatim}
+
+  \item \textbf{\underline{Question :}} \textbf{I have two screens and when I
+  am launching the installer/\grudu, java complains and the following
+  exception is raised :}\\
+  \begin{verbatim}
+Exception in thread "main" java.lang.ExceptionInInitializerError
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:164)
+	at java.awt.Toolkit$2.run(Toolkit.java:821)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.Toolkit.getDefaultToolkit(Toolkit.java:804)
+	at javax.swing.UIManager.initialize(UIManager.java:1262)
+	at javax.swing.UIManager.maybeInitialize(UIManager.java:1245)
+	at javax.swing.UIManager.getUI(UIManager.java:851)
+	at javax.swing.JPanel.updateUI(JPanel.java:104)
+	at javax.swing.JPanel.<init>(JPanel.java:64)
+	at javax.swing.JPanel.<init>(JPanel.java:87)
+	at javax.swing.JPanel.<init>(JPanel.java:95)
+	at diet.application.settings.SettingsPanelImplementation.
+<init>(SettingsPanelImplementation.java:13)
+	at diet.application.settings.DIETInstallationSettingsPanel.
+<init>(DIETInstallationSettingsPanel.java:32)
+	at diet.application.DDBApplicationConfiguration.
+initializeSpecificSettingsPanelList(DDBApplicationConfiguration.java:49)
+	at diet.application.ApplicationConfiguration.
+loadConfiguration(ApplicationConfiguration.java:165)
+	at diet.application.ApplicationConfiguration.
+setApplicationContext(ApplicationConfiguration.java:118)
+	at diet.DietOffice.main(DietOffice.java:834)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 1
+	at sun.awt.X11GraphicsEnvironment.
+getDefaultScreenDevice(X11GraphicsEnvironment.java:178)
+	at sun.awt.X11.XToolkit.<clinit>(XToolkit.java:98)
+	... 18 more
+	\end{verbatim}
+\textbf{\underline{Answer : }} To solve this juste launch the installer or
+\grudu on the other screen (it should be the first display, under Linux
+something like :
+\begin{verbatim}
+> echo $DISPLAY
+:0:0
+\end{verbatim}
+\end{itemize}

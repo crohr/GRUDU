@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build-jar" name="GangliaHistoryMaker">
+
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.2"/>
+    <property name="source" value="1.3"/>
+    <property name="srcDir" value="${basedir}/src"/>
+    <property name="libDir" value="${basedir}/lib"/>
+	<property name="buildDir" value="${basedir}/build"/>
+	<property name="distDir" value="${basedir}"/>
+	<property name="jdomJar" value="jdom.jar"/>
+	<property name="fatjar" value="fatjar.jar"/>
+	<property name="outputJar" value="GangliaHistoryMaker.jar"/>
+    <path id="GangliaHistoryMaker.classpath">
+        <pathelement location="${buildDir}"/>
+        <pathelement location="${libDir}/${jdomJar}"/>
+    </path>
+    <property name="fjepPath" value="${basedir}/lib/fatjar.jar" />
+    <taskdef name="fatjar.build" loaderref="${fjepPath}" classname="net.sf.fjep.anttask.FJBuildTask" classpath="${fjepPath}"/>
+	<typedef name="fatjar.manifest" loaderref="${fjepPath}" classname="net.sf.fjep.anttask.FJManifestType" classpath="${fjepPath}"/>
+	<typedef name="fatjar.exclude" loaderref="${fjepPath}" classname="net.sf.fjep.anttask.FJExcludeType" classpath="${fjepPath}"/>
+	<typedef name="fatjar.jarsource" loaderref="${fjepPath}" classname="net.sf.fjep.anttask.FJJarSourceType" classpath="${fjepPath}"/>
+	<typedef name="fatjar.filesource" loaderref="${fjepPath}" classname="net.sf.fjep.anttask.FJFileSourceType" classpath="${fjepPath}"/>
+    <target name="init">
+        <mkdir dir="${buildDir}"/>
+        <copy includeemptydirs="false" todir="${buildDir}">
+            <fileset dir="${srcDir}" excludes="**/*.launch, **/*.java"/>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete quiet="true" dir="${buildDir}"/>
+    	<delete quiet="true" file="${distDir}/${outputJar}"/>
+    	<delete quiet="true" dir="__"/>
+    </target>
+    <target depends="init" name="build">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${buildDir}" source="${source}" target="${target}">
+            <src path="${srcDir}"/>
+        	<classpath refid="GangliaHistoryMaker.classpath"/>
+        </javac>
+    </target>
+	
+	<target depends="build" name="build-jar">
+		<fatjar.build output="${distDir}/${outputJar}">
+		     <fatjar.manifest mainclass="ganglia.controller.GangliaHistoryMaker" classpath="${libDir}/${jdomJar}"/>
+		     <fatjar.filesource path="${buildDir}" relpath=""/>
+		     <fatjar.jarsource file="${libDir}/${jdomJar}" relpath=""/>
+		</fatjar.build>
+	</target>
+</project>

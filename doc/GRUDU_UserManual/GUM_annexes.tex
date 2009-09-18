@@ -1,0 +1,135 @@
+%****************************************************************************%
+%* Annexes		                                                            *%
+%*                                                                          *%
+%* Author(s):                                                               *%
+%* - Abdelkader AMAR (Abdelkader.Amar@ens-lyon.fr)                          *%
+%* - David LOUREIRO (David.Loureiro@ens-lyon.fr)                            *%
+%*                                                                          *%
+%* $LICENSE$                                                                *%
+%****************************************************************************%
+%* $Id: GUM_annexes.tex,v 1.3 2007/11/29 16:03:21 dloureir Exp $
+%* $Log: GUM_annexes.tex,v $
+%* Revision 1.3  2007/11/29 16:03:21  dloureir
+%* typo corrections
+%*
+%* Revision 1.2  2007/11/08 11:31:14  dloureir
+%* Correcting the headers
+%*
+%****************************************************************************%
+\appendix
+\chapter{Configuration files}
+
+\section{Files used by \grudu}
+
+\grudu uses several configuration files saved in the \texttt{.diet}
+directory which is located at the root of your home directory:
+
+\begin{itemize}
+  \item \texttt{GRUDUApplicationProperties.xml} : main configuration file containing
+  the high level information.
+  \item \texttt{g5K.xml} : this file contains the main information for the
+  \gfk connection management.
+  \item \texttt{g5k\_cfg.xml} : this file corresponds to the grid description.
+\end{itemize}
+
+For each file the main content for the \grudu usage will be described.
+
+\section{\gfk configuration file: \textit{GRUDUApplicationProperties.xml}}
+\begin{verbatim}
+<application>
+  <properties 
+        name="tipOfTheDayShowOnStartup" 
+        value="false" />
+  <properties 
+        name="tipOfTheDayFileOfTips" 
+        value="languages/totd/defaultGRUDUFileOfTips_eng.xml" />
+  <properties 
+        name="version" 
+        value="1.1.0" />
+</application>
+\end{verbatim}
+
+This files defines the application wide configuration iformation. 
+
+For the moment every elements are a \texttt{properties} with a \texttt{name} and
+a \texttt{value}.
+
+For the moment there are three properties declared in that file :
+\begin{itemize}
+  \item \textit{version} : the purpose of that property is obvious, it
+  corresponds to the version of \grudu.
+  \item \textit{tipOfTheDayShowOnStartup} : This property declares whether the
+  tip of the day should (or not) be displayed on startup.
+  \item \textit{tipOfTheDayFileOfTips} : This property defines the file from
+  which the tips of the day should be taken.
+\end{itemize}
+
+\section{\gfk configuration file: \textit{g5k.xml}}
+
+\begin{verbatim}
+<?xml version="1.0" standalone="yes"?>
+<g5k>
+  <preferredAccesPoint host="acces.lyon.grid5000.fr.fr" />
+  <username id="myG5KLogin" />
+  <sshkey file="thePathToMySSHKeyFile" />
+
+<!-- G5K Sites -->
+ . . .
+</g5k>
+
+\end{verbatim}
+
+This file defines the global information used to log in \gfk. The elements that
+are not used by \grudu have been removed from the description.
+
+Here are the parameters that should be supplied:
+
+\begin{itemize}
+  \item \textit{preferredAccesPoint}: the node has an attribute named
+  \textbf{host}. This attribute have to be the name of one of the access
+  frontales of \gfk.
+  \item \textit{username}: the node has an attribute named \textbf{id} that is
+  the login of the user.
+  \item \textit{sshkey}: the node has one attribute \textbf{file} which is the
+  file storing the ssh private key.
+\end{itemize}
+
+\section{\gfk configuration file: \textit{g5k\_cfg.xml}}
+
+\begin{verbatim}
+
+<g5k>
+        <site
+                 id="Lyon"
+                 enable="false"
+                 batch_schedulers="OAR1"
+         >
+                <cluster name="Lyon--Capricorne"  xda="" />
+                <cluster name="Lyon--Sagittaire"  xda="" />
+        </site>
+
+. . .
+
+</g5k>
+
+\end{verbatim}
+
+This file describes the platform of \gfk, the properties of the sites
+(id, batch\_scheduler, etc) but also the clusters of the sites with their
+deployment partitions.
+
+Here are the parameters that should be supplied for each site:
+
+\begin{itemize}
+  \item \textit{id} : Name of the site
+  \item \textit{enable} : (true/false) defines whether the site is considered in
+  the interrogation parts of \grudu
+  \item \textit{batch\_schedulers} : Name of the batch scheduler to use
+  \item For each cluster:
+  \begin{itemize}
+    \item \textit{name} : the name of the cluster
+    \item \textit{xda} : the partition used by KaDeploy
+    \end{itemize}
+\end{itemize}
+
+%******************************************%

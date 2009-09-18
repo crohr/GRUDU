@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE tips [
+	<!ELEMENT tips (tip*)>
+	<!ELEMENT tip (#PCDATA)>
+	<!ATTLIST tip name CDATA #REQUIRED>
+]>
+<tips>
+	<tip name="DIET_hierarchy_deployment">
+To deploy a DIET hierarchy you have two choices:
+- Using the DIET Designer to create a DIET hierarchy, GRUDU to reserve nodes and the DIET Mapping Tool to map these reserved nodes on the elements of the DIET hierarchy.
+- Using GRUDU to reserve nodes and the XMLGoDIETGenerator to generate DIET hierarchy depending on the available resources.
+	</tip>
+	<tip name="DIET_Designer_1">The DIET Designer allows you to create the hierarchy you desire with all the feature of DIEt such as SeD with Batch Scheduler support.</tip>
+	<tip name="DIET_Designer_2">The DIET Designer allows you to realized different hierarchies at the same time.</tip>
+	<tip name="DIET_Designer_3">If you are used to write your own GoDIET file by hand you can see the corresponding diet_hierarchy element of the hierarchy you are creating.</tip>
+	
+	<tip name="DIET_Designer_4">You can open existing hierarchies from the DIET_Designer to create new ones from them.</tip>
+	<tip name="DIET_Deploy_Tool_1">With the DIET Deploy Tool you can either deploy your DIET hierarchies on your local machine or on Grid'5000.</tip>
+	<tip name="DIET_Deploy_Tool_2">When deploying a hierarchy either locally or remotely the elements are colored corresponding to their deployment state.</tip>
+	
+	<tip name="DIET_Mapping_Tool_1">When you want to map some resources on a hierarchy you have to select a hieararchy and a directory containing some resources saved from GRUDU.</tip>
+	<tip name="DIET_Mapping_Tool_2">When using the DIET Mapping Tool you can select a site to display the available nodes on it and map the available nodes to the elements of the DIET hierarchy.</tip>
+	<tip name="DIET_Mapping_Tool_3">When using the mapping tool you can deploy the hierarchy on which you have mapped some resources.</tip>
+	
+	<tip name="XMLGoDIETGenerator_1">When you want to generate resources-driven hierarchies you can use the XMLGoDIETGenerator.</tip>
+	<tip name="XMLGoDIETGenerator_2">If you have no reservation to use for a hierarchy generation from the XMLGoDIETGenerator you can access GRUDU from it.</tip>
+	<tip name="XMLGoDIETGenerator_3">You can provide your own framework of hierarchy creation for the XMLGoDIETGenerator.</tip>
+	<tip name="XMLGoDIETGenerator_4">In the XMLGoDIETGenerator wizzard you can save the input file of the XMLGoDIETGenerator.</tip>
+	
+	<tip name="VizDIET_1">If you want to monitor a DIET hierarchy you can use VizDIET to generate statistics and graphs.</tip>
+	
+	<tip name="Settings_1">You can see and modify the application wide settings with the settings frame</tip>
+	<tip name="Logging_1">You can see the logging information in the Logging frmae for each logger (there is a logger per module)</tip>
+	
+	<tip name="Help_1">You can acces to the Help of the DIET_DashBoard in order to get some information about its use.</tip>
+	
+	<tip name="GRUDU_launch_1">In GRUDU, when connecting to Grid'5000 you should provide your SSH passphrase. You will just have to type it once per application lifetime. It won't be save on disk be it will stay in memory.</tip>
+	<tip name="GRUDU_launch_2">In GRUDU, when connecting to Grid'5000 your preferred acces frontale is chosen for classical cases but you can also select another frontale.</tip>
+	<tip name="GRUDU_configuration_1">In GRUDU, in the configuration panel you can modify every parameters of the connection (your preferred acces frontale, your username, your ssh key file and your passphrase)</tip>
+	<tip name="GRUDU_configuration_2">In GRUDU, in the misc panel of the configuration panel you can configure your cluster policy: if they are enabled or not, the KaDeploy partitions and the Batch Scheduler to use.</tip>
+	<tip name="GRUDU_configuration_3">In GRUDU, in the configuration panle you can configure GoDIET properties</tip>
+	<tip name="GRUDU_configuration_4">In GRUDU, you can define environment variables for each site. These environment variables will then be used in GoDIET</tip>
+	<tip name="GRUDU_display_1">In GRUDU, the clusters are displayed in the tree with four different colors : Gray when they are not enabled, White when they are enabled and do not have job of the user, Yellow when they are enabled and have jobs of the user in the waiting mode, and Green when they are enabled and have jobs that are running.</tip>
+	<tip name="GRUDU_display_2">In GRUDU, the vizualisation has three levels: The Grid level where you can find some information on all the grid, the cluster level where you can find information on the occupation of the cluster and the reservation realized on it, and the job level with all the ifnormation about it.</tip>
+	<tip name="GRUDU_display_3">In GRUDU, you can realize some operations by right clicking on the elements of the tree : updating the views, deleting some jobs or opening a terminal on the selected resource.</tip>
+	<tip name="GRUDU_display_grid_1">In GRUDU, in the grid view, you have a graph of the grid occupation, a table summarizing the information of the graph and (optionnaly) a table of the reservation realized by the user.</tip>
+	<tip name="GRUDU_display_grid_2">In GRUDU, in the grid view you can display different graphs for the same data such as a histogramm for all clusters or a pie of the nodes states.</tip>
+	<tip name="GRUDU_display_grid_3">In GRUDU, when you have some reservation running you can save the corresponding nodes and jobs in a directory from the user reservation table.</tip>
+	<tip name="GRUDU_display_grid_4">In GRUDU, you can change the properties of the graph presented and also save it in several different formats.</tip>
+	<tip name="GRUDU_display_3">In GRUDU, when you have realized some reservations you can see this nodes in a different color in order to identify them from the other nodes used by jobs.</tip>
+	<tip name="GRUDU_display_cluster_1">In GRUDU, when you select a cluster you have the information about the node states, and you also have the possibility to display a gantt chart of the jobs present on the cluster.</tip>
+	<tip name="GRUDU_display_cluster_2">In GRUDU, when you select a cluster three elements are displayed : a graph repsenting the nodes states, a table summarizing these information and a table of the jobs running and waiting on the cluster.</tip>
+	<tip name="GRUDU_display_cluster_3">In GRUDU, you can change the properties of the graph presented and also save it in several different formats.</tip>
+	<tip name="GRUDU_display_job_1">In GRUDU, when selecting a job in the tree you can see a lot of information such as the nodes used by this job or the walltime of your reservation, etc ...</tip>
+	<tip name="GRUDU_reservation_main_1">In GRUDU, when you click on the reservation button, the main panel displays a map of Grid'5000 where the sites you enabled are presented.</tip>
+	<tip name="GRUDU_reservation_main_2">In GRUDU, when you click on a site you can define the number of nodes you want to reserve. These information will be displayed in a tootip is the mouse is over the site.</tip>
+	<tip name="GRUDU_reservation_main_3">In GRUDU, you can define the walltime, the date of the reservation and the queue in the main panel of the reservation frame.</tip>
+	<tip name="GRUDU_reservation_main_4">In GRUDU, you can select the OAR grid sub behaviour for the reservation you are configuring.</tip>
+	<tip name="GRUDU_reservation_main_5">In GRUDU, you can define a script to launch when the reservation gets running in the main panel of the reservation frame.</tip>
+	<tip name="GRUDU_reservation_properties_1">In GRUDU, when realizing a reservation you can define OAR properties for each clusters of Grid'5000 that you will use.</tip>
+	<tip name="GRUDU_reservation_status_1">In GRUDU, when realizing a reservation, a status is displayed when all the oarsub commands have been executed on the OAR frontales.</tip>
+	<tip name="GRUDU_terminal_1">In GRUDU, when clicking on the terminal button you can open a terminal on the preferred access frontale.</tip>
+	<tip name="GRUDU_terminal_2">In GRUDU, you can open a terminal on each cluster frontale by right clicking on the cluster nodes of the tree and selecting the "open a shell" item.</tip>
+	<tip name="GRUDU_terminal_3">In GRUDU, you can open a terminal on the main node of a job by right clicking on the job node of the tree and selecting the "open a shell" item.</tip>
+	<tip name="GRUDU_summary_1">In GRUDU, you can display a summary of the Grid'5000 and User resources from which you can save these resources to a directory fo r a further use.</tip>
+	<tip name="GRUDU_kadeploy_1">In GRUDU, you can deploy KaDeploy images from GRUDU with a nice interface where you can select some nodes and the images to deploy on them.</tip>
+	<tip name="GRUDU_kadeploy_2">In GRUDU, when clicking the deploy button in the deploy frame, a status frame will display the evolution of your deployments where you will be able to know how the deployments go.</tip>
+	
+</tips>

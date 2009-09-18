@@ -1,0 +1,27 @@
+GRUDU : Grid 5000 Reservation Utility for Deployment Usage
+
+GRUDU : cet outil a été conçu pour gérer les ressources
+réseau de l'utilisateur qui sont un aspect important du grid computing.
+ Actuellement cet outil est utilisé seulement pour la plate-forme
+GRID5000 et fournit plusieurs opérations pour faciliter l'accès à
+cette plate-forme. Les caractéristiques principales sont :
+  - Affichage du statut de la plate-forme : cette fonction fournit des
+  informations sur les clusters, les noeuds et les jobs de la plateforme.
+  - Assignation de ressources : cette fonction fournit une façon simple
+  d'allouer des ressources en choisissant sur une carte de GRID5000
+  le nombre de noeuds exigés et en définissant le temps de l'allocation.
+  Les ressources allouées peuvent être stockées et utilisées avec le
+  DIET Mapping Tool.
+  - Monitoring des resources grâce au plugin Ganglia qui vous donne des
+  information bas niveau, sur toutes les machines d'un site (données 
+  instantanées) ou sur l'historique des métriques por les machines de vos
+  jobs.
+  - Management du déploiement des partitions avec un GUI pour KaDeploy 
+  qui vous permet un gestion de vos déploiements simplifiée.
+  - Un terminal qui vous permet de vous connecter directement sur vos jobs 
+  ou sur la frontale d'un site.
+  - Un gestionnaire de fichier qui vous permet de faire des envois/réceptions
+  de fichiers entre votre machine locale et Grid'5000 mais aussi entre les 
+  frontales de Grid'5000.
+
+Plus d'informations peuvent être trouvées dans GRUDU.

@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+
+<!-- ****************************************************************** -->
+<!--                                                                    -->
+<!-- Build.xml : file for the compiation of the tools dependancies for  -->
+<!-- GRUDU external tools                                               -->
+<!--                                                                    -->
+<!-- Purpose   : this file is used to compile the executable jar files  -->
+<!--             needed by the GRUDU project.                           -->
+<!--                                                                    -->
+<!-- Authors   : Abdelkader Amar < abdelkader.amar@ens-lyon.fr >        -->
+<!--             David Loureiro  < david.loureiro@ens-lyon.fr >         -->
+<!--                                                                    -->
+<!-- ****************************************************************** -->
+
+<project default="build-tools" basedir=".">
+
+	<property name="GangliaAnalyzer" value="GangliaAnalyzer"/>
+	<property name="GangliaHistoryMaker" value="GangliaHistoryMaker"/>
+	<property name="JCTerm" value="JCTerm"/>
+	<property name="JFTP" value="JFTP"/>
+	<property name="JSwingReader" value="JSwingReader"/>
+	<property name="destinationDir" value="${basedir}/../lib"/>
+	
+	<target name="build-tools">
+		<echo message="--- Building dependancy tools for GRUDU ---"/>
+		
+		<echo message="----- Building Ganglia Analyzer tool -----"/>
+		<ant dir="${GangliaAnalyzer}" antfile="build.xml"/>
+		
+		<echo message="----- Building Ganglia History Maker tool -----"/>
+		<ant dir="${GangliaHistoryMaker}" antfile="build.xml"/>
+		
+		<echo message="----- Building the JCTerm tool -----"/>
+		<ant dir="${JCTerm}" antfile="build.xml"/>
+		
+		<echo message="----- Building the JFTP tool -----"/>
+		<ant dir="${JFTP}" antfile="build.xml"/>
+		
+		<echo message="----- Building the JSwingReader tool -----"/>
+		<ant dir="${JSwingReader}" antfile="build.xml"/>
+		<antcall target="copy_tools"/>
+	</target>
+	
+	<target name="copy_tools">
+		<copy todir="${destinationDir}">
+			<fileset dir="${GangliaAnalyzer}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${GangliaHistoryMaker}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${JCTerm}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${JFTP}">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${JSwingReader}">
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="clean-tools">
+		<echo message="--- Cleaning dependancy tools for GRUDU ---"/>
+		
+		<echo message="----- Cleaning Ganglia Analyzer tool -----"/>
+		<ant dir="${GangliaAnalyzer}" antfile="build.xml" target="clean"/>
+		
+		<echo message="----- Cleaning Ganglia History Maker tool -----"/>
+		<ant dir="${GangliaHistoryMaker}" antfile="build.xml" target="clean"/>
+		
+		<echo message="----- Cleaning the JCTerm tool -----"/>
+		<ant dir="${JCTerm}" antfile="build.xml" target="clean"/>
+		
+		<echo message="----- Cleaning the JFTP tool -----"/>
+		<ant dir="${JFTP}" antfile="build.xml" target="clean"/>
+		
+		<echo message="----- Cleaning the JSwingReader tool -----"/>
+		<ant dir="${JSwingReader}" antfile="build.xml" target="clean"/>
+		
+	</target>
+</project>

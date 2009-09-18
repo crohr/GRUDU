@@ -1,0 +1,79 @@
+DIET DashBoard is a set of tools written in Java that provide to DIET
+end-user a friendly-user interface to design, deploy and monitor the
+execution of applications.
+
+
+Diet DashBoard is an extensible set of graphical tools for the DIET
+community. Currently six tools are available:
+
+The main components of DIET DashBoard are:
+
+Workflow designer: this tool dedicated to workflow applications
+written in DIET provide to the user an easy way to design and execute
+workflows with DIET. After connecting to a deployed DIET platform, the
+user can compose the different available services and link them by
+drag'n'drop or load a workflow description file in order to reuse it.
+ Once the workflow designed, the user can set its
+parameters and then execute it. DIET DashBoard includes a generic
+client that can execute any workflow. The results of the workflow and
+the execution log are displayed.
+
+Workflow log service: this tool can be used to monitor workflows
+execution by displaying the DAG nodes of each workflow and their
+states. Three states are available: waiting, running and done.  The
+workflow log service can be used in two mode:
+
+  - local mode: can be used if your DIET grid application can access
+to your host.
+  - remote mode: this mode is useful if your platform is behind a
+firewall and allow only ssh connections.
+
+DIET designer: allows to the user to design graphically a DIET
+hierarchy. Only the application characteristics are defined (agent
+type: Master or Local and SeD parameters).  The designed application
+can be stored to be used with DIET mapping tool.
+
+DIET mapping tool: allow the user to map the allocated Grid'5000
+resources to a DIET application. The mapping is done in an interactive
+way by selecting the site then DIET agents or SeD. For each Grid'5000
+site, the nodes (or hosts) are used in a homogenous manner but the
+user can select a particular host if needed.
+
+DIET deployment tool: this tool is a graphical interface to GoDIET. It
+provides the basic GoDIET operations: open, launch, stop and also a
+monitoring mechanism to check if DIET application elements still alive
+(three states are available: unknown, dead and running).  As the
+workflow log service, the DIET deployment tool can be used in a local
+mode or a remote mode.
+
+GRUDU: this tool was designed to manage the user grid
+resources which is an important aspect of grid computing. Currently
+this tool is used only for Grid'5000 platform and provides several
+operations to facilitate the access to this platform. The main
+features: 
+	- Displaying the status of the platform: this feature
+provides informations about clusters, nodes and jobs.  
+	- Resources allocation: this feature provides an easy way to allocate 
+	resources by selecting in a Grid'5000 map the number of required nodes 
+	and defining time. The allocated resources can be stored and used with
+	 DIET mapping tool.   
+	- Resources monitoring through the use of the Ganglia plugin that gives you
+	low-level information on every machines of a site (instantaneous data) or on
+	every machines of a job (history of the metrics)
+  	- Deployment management with a GUI for KaDeploy simplifying its use.
+  	- A terminal emulator allowing the user to connect directly to its jobs but 
+  	also to the site frontends.
+  	- A file transfert manager allowing the user to send and receive file to/from
+  	Grid'5000 or exchange files between the Grid'5000 frontends.
+
+More information can be found in GRUDU.
+
+XMLGoDIETGenerator : this tool was designed to help the end-user
+creating hierarchies from existing frameworks based on the reserved
+ressources. The user will be asked to choose an experience (a
+framework of hierarchy) from the ones available (personal hiearchies
+can be added, for more informations see the XMLGoDIETGenerator
+documentation). For each hierarchy the user will have to specify the
+required elements involved (MA/LA/SeD). Finally a platform will be
+generated and the user will then be to deploy it through the DIET
+deploy tool.

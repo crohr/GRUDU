@@ -1,0 +1,80 @@
+<project name="J-FTP" default="jars" basedir=".">
+
+<!-- ========== Compiler Defaults ========================================= -->
+
+  <!-- Should Java compilations set the 'debug' compiler option? -->
+  <property name="compile.debug"           value="true"/>
+
+  <!-- Should Java compilations set the 'optimize' compiler option? -->
+  <property name="compile.optimize"        value="true"/>
+	
+<!-- ========== Properties keys =========================================== -->
+	
+	<property name="srcDir" value="${basedir}/src"/>
+	<property name="buildDir" value="${basedir}/build"/>
+	<property name="resourcesDir" value="resources"/>
+	<property name="libDir" value="${basedir}/lib"/>
+	<property name="distDir" value="${basedir}"/>
+	
+	<property name="activationJar" value="activation.jar"/>
+	<property name="jdomJar" value="jdom.jar"/>
+	<property name="sshJar" value="trilead-ssh2-build211.jar"/>
+	<property name="outputJar" value="jftp.jar"/>
+
+<!-- ========== Executable Targets ======================================== -->
+
+  <target name="prepare" description="Prepare build directory">
+    <mkdir dir="${buildDir}"/>
+  	<mkdir dir="${buildDir}/${resourcesDir}" />
+  	    <copy todir="${buildDir}/${resourcesDir}">
+  	      <fileset dir="${srcDir}/${resourcesDir}"/>
+  	    </copy>
+  </target>
+
+  <target name="compile" depends="prepare" description="Compile shareable components">
+    <javac  srcdir="${srcDir}"
+           destdir="${buildDir}"
+	     debug="${compile.debug}"
+          optimize="${compile.optimize}"
+	  nowarn="true">
+      <classpath>
+      	<pathelement location="${libDir}/${activationJar}"/>
+      	<pathelement location="${libDir}/${jdomJar}"/>
+      	<pathelement location="${libDir}/${sshJar}"/>
+      </classpath>
+      <include name="**/**"/>
+  </javac>
+  </target>
+  
+  <target name="panel" depends="prepare" description="Compile Custom">
+    <javac  srcdir="${srcDir}/java/net/sf/jftp"
+	   destdir="${buildDir}"
+             debug="${compile.debug}"
+          optimize="${compile.optimize}">
+      <classpath refid="compile.classpath"/>
+      <include name="**/**"/>
+  </javac>       
+  </target>
+
+  <target name="clean" description="Clean build and distribution directories">
+    <delete quiet="true" dir="${buildDir}"/>
+    <delete quiet="true" file="${distDir}/${outputJar}"/>
+  </target>
+
+  <target name="jars" depends="compile" description="Create Executable Jar">
+    <jar compress="true" jarfile="${distDir}/${outputJar}"
+            basedir="${buildDir}"
+    	includes="**.class **/*.class **/**/*.class **/**/**/*.class
+    		           resources/*.png resources/**/**/*.png
+    	    		   resources/wizzard/*.png resources/wizzard/dtd/*.dtd
+    			   resources/gridr/g5k/*.jpg
+    	 	   resources/gridr/g5k/jftp/images/*.png
+    	 	   resources/gridr/g5k/jftp/images/*.jpg
+    	 	   resources/gridr/g5k/jftp/images/org/javalobby/icons/16x16/*.gif
+    	 	resources/gridr/g5k/jftp/images/org/javalobby/icons/16x16/*.png
+    	 	resources/gridr/g5k/jftp/images/org/javalobby/icons/16x16/*.jpg
+    	 	resources/gridr/g5k/jftp/images/org/javalobby/icons/20x20/*.gif">
+    </jar>
+  </target>
+
+</project>

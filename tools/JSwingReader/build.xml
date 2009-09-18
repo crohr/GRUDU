@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<!-- Ant Buildfile for JSwingReader RSS NewsFeed Reader  -->
+
+<project name="JSwingReader" default="make" basedir=".">
+  <property name="srcDir" value="${basedir}/src" />
+  <property name="distDir" value="${basedir}" />
+  <property name="libDir" value="${basedir}/lib"/>
+  <property name="name" value="jswingreader" />
+  <property name="version" value="0.3" />
+  <property name="buildDir" value="${basedir}/build"/>
+  
+  <property name="jdicJar" value="jdic.jar"/>
+
+   <!--Set the classpath-->
+   <path id="classpath"> 
+      <pathelement location="${buildDir}"/>
+      <pathelement location="${libDir}/${jdicJar}"/>
+   </path>
+
+   <!--Set the source path-->
+   <path id="srcpath">
+      <pathelement location="${srcDir}"/>
+   </path>
+
+   <target name="init">
+      <tstamp/>
+   </target>
+
+   <target name="compile" depends="init">
+      <mkdir dir="${buildDir}"/>
+      <!--Compile Java source files-->
+      <javac destdir="${buildDir}" debug="on">
+         <classpath refid="classpath"/>
+         <src refid="srcpath"/>
+         <include name="org/robsite/jswingreader/**" />
+      </javac>
+      <!--Copy files to output directory-->
+      <copy todir="${buildDir}">
+        <fileset dir="${srcDir}" includes="**/*.gif"/>
+      </copy>
+   </target>
+
+   <target name="clean">
+      <!--Delete output directories-->
+      <delete quiet="true" dir="${buildDir}"/>
+      <delete quiet="true" file="${distDir}/${name}-${version}.jar"/>
+   </target>
+   
+  <target name="jar" depends="compile">
+    <mkdir dir="${distDir}"/>
+    <jar jarfile="${distDir}/${name}-${version}.jar">
+      <fileset dir="${buildDir}" >
+	      <include name="**/*" />
+      </fileset>
+    </jar>
+  </target>
+   
+
+   <target name="make" depends="jar">
+   	</target>
+
+   <target name="rebuild" depends="clean,make"/>
+
+</project>

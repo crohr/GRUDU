@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Resources allocation</TITLE>
+<META NAME="description" CONTENT="Resources allocation">
+<META NAME="keywords" CONTENT="Grudu-UM">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="Grudu-UM.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="Grudu-UM.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html186"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html182"
+  HREF="Grudu-UM.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html176"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html184"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html187"
+  HREF="node12.html">Monitoring Grid5000</A>
+<B> Up:</B> <A NAME="tex2html183"
+  HREF="Grudu-UM.html">User's Manual</A>
+<B> Previous:</B> <A NAME="tex2html177"
+  HREF="node10.html">Interface presentation</A>
+ &nbsp; <B>  <A NAME="tex2html185"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00600000000000000000">
+Resources allocation</A>
+</H1>
+
+<P>
+[[:]:!:}[[:]:!:}Using OAR interface
+<A NAME="sec:oar"></A>
+<P>
+The most used operation is probably resources allocation. In G<SMALL>RID'5000</SMALL>,
+this operation can be done by OAR system. G<SMALL>RUDU</SMALL> provides an easy way
+to manipulate OAR. The resources allocation windows on Figure <A HREF="#fig:cfg_tab1">4.1</A> shows a map of
+France with G<SMALL>RID'5000</SMALL> sites&nbsp;<A NAME="tex2html16"
+  HREF="footnode.html#foot155"><SUP><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN></SUP></A> and jobs characteristics (time, queue, oargridsub behaviour, the
+script to launch). These information are presented on the first tab of the
+window. The second tab provides the definition of the properties for the
+different clusters 
+Since some sites include more than one cluster, you have to click first on the
+site, and then to select the number of desired hosts. When selecting
+resources numbers, the map displays the total number of requested
+resources for each site<A NAME="tex2html17"
+  HREF="footnode.html#foot156"><SUP><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN></SUP></A>. Jobs characteristics
+are:
+
+<UL>
+<LI>Time parameters: date and reservation walltime. The starting time can
+  be specified manually, or through the use of a calendar for the day and
+  through boxes where you can specify the hour, the minute and the second. For
+  the walltime you have to define the number of hours and the minutes of your reservation.
+</LI>
+<LI>Queue: default or Kadeploy.
+</LI>
+<LI>OARGridSb behaviour: the user can specify if the reservation should be
+  done with the OARGridSub behaviour, i.e. when the user chooses to realize
+  several reservations on different sites, if one fails, all the previous
+  successful reservations are deleted.
+</LI>
+<LI>A script to launch: The user can specify a script that will be launched
+  in order to be executed on the reserved nodes. The reservation will be stopped
+  when the script ends.
+</LI>
+</UL>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cfg_tab1"></A><A NAME="161"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.1:</STRONG>
+Resources allocation frame - Main panel</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV><IMG
+ WIDTH="333" HEIGHT="223" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="\includegraphics[width=0.6\linewidth]{figures/GRUDU_allocation_1.eps}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Concerning the second tab of the window presented on Figure , it allows to the
+user the
+ability to define the OAR properties that will be used for the reservation.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cfg_tab2"></A><A NAME="166"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.2:</STRONG>
+Resources allocation frame - OAR properties for the reservation</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV><IMG
+ WIDTH="333" HEIGHT="223" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="\includegraphics[width=0.6\linewidth]{figures/GRUDU_allocation_2.eps}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html186"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html182"
+  HREF="Grudu-UM.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html176"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html184"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html187"
+  HREF="node12.html">Monitoring Grid5000</A>
+<B> Up:</B> <A NAME="tex2html183"
+  HREF="Grudu-UM.html">User's Manual</A>
+<B> Previous:</B> <A NAME="tex2html177"
+  HREF="node10.html">Interface presentation</A>
+ &nbsp; <B>  <A NAME="tex2html185"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+David Loureiro
+2007-07-04
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,259 @@
+<?xml version="1.0" ?>
+
+<!-- ****************************************************************** -->
+<!--                                                                    -->
+<!-- Build.xml : file for ant compilation                               -->
+<!--                                                                    -->
+<!-- Purpose   : this file is used to compile the executable jar files  -->
+<!--             of the GRUDU project.                                  -->
+<!--                                                                    -->
+<!-- Authors   : Abdelkader Amar < abdelkader.amar@ens-lyon.fr >        -->
+<!--             David Loureiro  < david.loureiro@ens-lyon.fr >         -->
+<!--                                                                    -->
+<!-- ****************************************************************** -->
+
+<project default="--help" basedir=".">
+  
+  <property name="user" value="${user.name}"/>
+
+  <!-- Version for the GRUDU -->
+  <property name="GRUDUIVersion" value="1.1.2" />
+
+  <!-- Properties for the directories -->
+  <property name="src_DDB" location="${basedir}/src" />
+  <property name="output_DDB" location="${basedir}/build" />
+  <property name="docs_DDB" location="${basedir}/doc/api" />
+  <property name="dist_DDB" value="${basedir}"/>
+  <property name="lib_DDB" value="${basedir}/lib"/>
+
+  <!-- Properties for the jar libraries needed -->
+  <property name="izPackfiles" value="izpackFiles" />
+  <property name="LookAndFeel" value="liquidlnf.jar" />
+  <property name="ganymed" value="trilead-ssh2-build211.jar" />
+  <property name="jdom" value="jdom.jar" />
+  <property name="javaHelp" value="jh.jar" />
+  <property name="jcommon" value="jcommon-1.0.6.jar" />
+  <property name="jfreechart" value="jfreechart-1.0.3.jar" />
+  <property name="jfreechart-experimental" value="jfreechart-1.0.3-experimental.jar" />
+  <property name="jcraft" value="jcraft.jar" />
+  <property name="jcalendar" value="jcalendar-1.3.2.jar" />
+  <property name="jdic" value="jdic.jar" />
+  <property name="totd" value="l2fprod-common-totd.jar"/>
+  <property name="jftp" value="jftp.jar"/>
+  <property name="activation.jar" value="activation.jar"/>
+  <property name="buttonbar" value="l2fprod-common-buttonbar.jar"/>
+  <property name="tasks" value="l2fprod-common-tasks.jar"/>
+  <property name="ganglia-analyzer" value="GangliaAnalyzer.jar"/>
+  <condition property="splashAvailable" >
+    <available classname="org.apache.tools.ant.taskdefs.optional.splash.SplashTask" />
+  </condition>
+
+  <!-- Task definition for the generation of the installer by IzPack -->
+  <taskdef name="izpack"
+  classpath="${lib_DDB}/standalone-compiler.jar" classname="com.izforge.izpack.ant.IzPackTask"/>
+
+  <!-- Target that initializes the project -->
+  <target name="init">
+    <mkdir dir="${output_DDB}"/>
+  </target>
+
+  <target name="GRUDU_splash" if="splashAvailable" >
+    <splash imageurl="file://${src_DDB}/resources/gridr/g5k/GRUDU.png" showduration="1000"/>
+  </target>
+  
+  <!-- Target that creates the jar file for GRUDU -->
+  <target depends="GRUDU_tools,init" name="GRUDU">
+    <javac srcdir="${src_DDB}/diet/util/gui"
+	   debug="on"
+	   destdir="${output_DDB}">
+      <classpath>
+	<pathelement location="${output_DDB}"/>
+	<pathelement location="${lib_DDB}/${jdom}" />
+      </classpath>
+    </javac>
+    <javac srcdir="${src_DDB}/diet/application"
+	   debug="on"
+	   destdir="${output_DDB}">
+      <classpath>
+	<pathelement location="${lib_DDB}/${jdom}" />
+	<pathelement location="${lib_DDB}/${totd}"/>
+      </classpath>
+    </javac>
+    <!-- <javac srcdir="${src}/diet/settings"
+	 debug="on"
+	 destdir="${output}">
+	 <classpath>
+	 <pathelement location="${output}"/>
+	 <pathelement location="${lib}/${jdom}"/>
+	 </classpath>
+	 </javac> -->
+    <javac srcdir="${src_DDB}/diet/logging"
+	   debug="on"
+	   destdir="${output_DDB}"
+	   />
+    <javac srcdir="${src_DDB}/diet/plugins"
+	   debug="on"
+	   destdir="${output_DDB}"
+	   />
+    <javac srcdir="${src_DDB}/diet/grid"
+	   debug="on"
+	   destdir="${output_DDB}">
+      <classpath>
+	<pathelement location="${output_DDB}"/>
+	<pathelement location="${lib_DDB}/${ganymed}"/>
+      </classpath>
+    </javac>
+    <javac srcdir="${src_DDB}/diet/gridr"
+	   debug="on"
+	   destdir="${output_DDB}">
+
+      <classpath>
+	<pathelement location="${output_DDB}"/>
+	<pathelement location="${lib_DDB}/${ganymed}"/>
+	<pathelement location="${lib_DDB}/${jcommon}"/>
+	<pathelement location="${lib_DDB}/${jfreechart}"/>
+	<pathelement location="${lib_DDB}/${jfreechart-experimental}" />
+	<pathelement location="${lib_DDB}/${jcraft}"/>
+	<pathelement location="${lib_DDB}/${jcalendar}" />
+	<pathelement location="${lib_DDB}/${javaHelp}"/>
+	<pathelement location="${lib_DDB}/${LookAndFeel}"/>
+	<pathelement location="${lib_DDB}/${totd}"/>
+	<pathelement location="${lib_DDB}/${jdom}" />
+	<pathelement location="${lib_DDB}/${jftp}"/>
+	<pathelement location="${lib_DDB}/${activation.jar}"/> 
+	<pathelement location="${lib_DDB}/${buttonbar}"/>
+	<pathelement location="${lib_DDB}/${ganglia-analyzer}"/>
+    <pathelement location="${lib_DDB}/${tasks}"/>
+      </classpath>
+    </javac>
+    <mkdir dir="${output_DDB}/resources/gridr" />
+    <mkdir dir="${output_DDB}/resources/gridr/g5k" />
+    <copy todir="${output_DDB}/resources/gridr/g5k">
+      <fileset dir="${src_DDB}/resources/gridr/g5k"/>
+    </copy>
+    <jar destfile="${dist_DDB}/GRUDU.jar" basedir="${output_DDB}"
+	 includes="**.class **/*.class **/**/*.class
+		   resources/*.png resources/**/**/*.png
+		   resources/gridr/g5k/*.jpg"
+	 >
+      <manifest>
+	<attribute name="Author" value="${user.name}"/>
+	<section name="GRUDU : Graphical Reserving Utility for Deployement Usage">
+	  <attribute name="Title" value="GRUDU"/>
+	  <attribute name="Vendor" value="GRAAL"/>
+	</section>
+	<section name="Copyright">
+	  <attribute name="Copy" value="(C) Graal Ens-Lyon 2006"/>
+	</section>
+	<attribute name="Main-Class" value="diet/gridr/g5k/gui/G5kRes"/>
+	<attribute name="Class-Path" value="./lib/${LookAndFeel} ./lib/${jcraft} ./lib/${totd}
+					    ./lib/${jdom} ./lib/${activation.jar}
+					    ./lib/${ganymed} ./lib/${jcalendar} ./lib/${javaHelp} ./lib/${jftp}
+					    ./lib/${jcommon} ./lib/${jfreechart} ./lib/${jfreechart-experimental} ./lib/${buttonbar}
+					    ./lib/${ganglia-analyzer} ./lib/${tasks}" />
+      </manifest>
+    </jar>
+  </target>
+
+  <!-- Target that creates the javadoc of GRUDU -->
+  <target description="API Javadoc for GRUDU" name="GRUDU_doc" depends="GRUDU_User_Manual">
+    <javadoc destdir="${docs_DDB}/GRUDU" packagenames="diet.gridr.*">
+      <sourcepath>
+	<pathelement location="${src_DDB}"/>
+      </sourcepath>
+      <doctitle><![CDATA[<h1>Javadoc for GRUDU : the Grid5000 Reservation Utility for Deployment Usage</h1>]]></doctitle>
+      <bottom><![CDATA[<i><b>GRUDU :: Application under CECILL license. Copyright 2007</i></b>]]></bottom>
+      <classpath>
+	<pathelement location="${output_DDB}"/>
+	<pathelement location="${lib_DDB}/${ganymed}"/>
+	<pathelement location="${lib_DDB}/${jcommon}"/>
+	<pathelement location="${lib_DDB}/${jfreechart}"/>
+	<pathelement location="${lib_DDB}/${jfreechart-experimental}" />
+	<pathelement location="${lib_DDB}/${jcraft}"/>
+	<pathelement location="${lib_DDB}/${jcalendar}" />
+	<pathelement location="${lib_DDB}/${javaHelp}"/>
+	<pathelement location="${lib_DDB}/${totd}"/>
+	<pathelement location="${lib_DDB}/${jdom}"/>
+	<pathelement location="${lib_DDB}/${LookAndFeel}"/>
+	<pathelement location="${lib_DDB}/${jftp}"/>
+	<pathelement location="${lib_DDB}/${activation.jar}"/>
+	<pathelement location="${lib_DDB}/${buttonbar}"/> 
+    <pathelement location="${lib_DDB}/${ganglia-analyzer}"/>
+      </classpath>
+    </javadoc>
+  </target>
+
+  <!-- Target that cleans the project for GRUDU -->
+  <target name="GRUDU_clean" depends="GRUDU_User_Manual_clean,GRUDU_tools_clean">
+    <delete quiet="true">
+      <fileset dir="${output_DDB}">
+	<include name="**/*.class"/>
+      </fileset>
+    </delete>
+    <delete quiet="true">
+      <fileset dir="${src_DDB}/diet/corba">
+	<include name="**/*.java"/>
+      </fileset>
+    </delete>
+    <delete quiet="true" dir="${docs_DDB}/GRUDU" />
+    <delete quiet="true" file="${dist_DDB}/GRUDU.jar" />
+    <delete quiet="true" dir="${output_DDB}"/>
+  </target>
+
+  <!-- Target that cleans the project for the installer of GRUDU -->
+  <target name="GRUDU_installer_clean" depends="GRUDU_clean" >
+    <delete quiet="true" file="GRUDU_Installer-${GRUDUIVersion}.jar" />
+  </target>
+
+  <!-- Target that creates (thanks to IzPack) an installer for GRUDU -->
+  <target name="GRUDU_installer" depends="GRUDU_splash,GRUDU_installer_clean,GRUDU,GRUDU_doc" >
+    <mkdir dir="izpack/bin/native/izpack" />
+    <copy file="${lib_DDB}/ShellLink.dll" todir="izpack/bin/native/izpack" />
+    <chmod file="${izPackfiles}/GRUDU/UnixUninstaller.sh" perm="u+rx"/>
+    <chmod file="${izPackfiles}/GRUDU/UnixLauncher.sh" perm="u+rx"/>
+    <izpack input="${izPackfiles}/GRUDU/GRUDU_Installer.xml"
+	    output="${dist_DDB}/GRUDU_Installer-${GRUDUIVersion}.jar"
+	    installerType="standard"
+	    basedir="${dist_DDB}"
+	    izpackdir="izpack"/>
+    <delete dir="izpack" />
+  </target>
+
+  <target name="GRUDU_tools">
+    <ant antfile="GRUDU_build.xml" dir="tools" target="build-tools"/>
+  </target>
+  
+  <target name="GRUDU_tools_clean">
+    <ant antfile="GRUDU_build.xml" dir="tools" target="clean-tools"/>
+  </target>
+  
+  <target name="GRUDU_User_Manual">
+    <ant antfile="GRUDU-UM_build.xml" dir="doc/GRUDU_UserManual" target="build-GRUDU-manual"/>
+  </target>
+  
+  <target name="GRUDU_User_Manual_clean">
+    <ant antfile="GRUDU-UM_build.xml" dir="doc/GRUDU_UserManual" target="clean-GRUDU-manual"/>
+  </target>
+  
+  <!-- Target that prints out the help for the build.xml file -->
+  <target name="--help">
+    <echo></echo>
+    <echo>Build.xml file for the GRUDU project</echo>
+    <echo></echo>
+    <echo> --------------------------------------- </echo>
+    <echo></echo>
+    <echo>Here are the principal targets of the project : </echo>
+    <echo></echo>
+    <echo> - GRUDU                          : generates the jar file of GRUDU</echo>
+    <echo> - GRUDU_doc                      : generates the javadoc of GRUDU</echo>
+    <echo> - GRUDU_clean                    : cleans the project for GRUDU</echo>
+    <echo> - GRUDU_installer                : generates the installer for GRUDU (but also the jar file and the javadoc)</echo>
+    <echo> - GRUDU_installer_clean          : cleans the installer for GRUDU (but also the jar file and the javadoc)</echo>
+    <echo></echo>
+    <echo>If you want to manage the dependancies :</echo>
+    <echo></echo>
+    <echo> - GRUDU_tools                    : generates the tools needed by GRUDU</echo>
+    <echo> - GRUDU_tools_clean              : cleans the tools by GRUDU</echo>
+  </target>
+
+</project>

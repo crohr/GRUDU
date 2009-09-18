@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="JCTerm">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+  	<property name="docsDir" value="${basedir}/doc" />
+  	<property name="distDir" value="${basedir}"/>
+  	<property name="libDir" value="${basedir}/../../lib"/>
+  	<property name="srcDir" value="${basedir}/src"/>
+  	<property name="binDir" value="${basedir}/build"/>
+  	<property name="jarName" value="jcraft.jar"/>
+  
+    <target name="init">
+        <mkdir dir="${binDir}"/>
+   <!-- <copy includeemptydirs="false" todir="${bin}">
+            <fileset dir="${src}" excludes="**/*.launch, **/*.java"/>
+        </copy>
+        -->
+    </target>
+    <target name="clean">
+        <delete quiet="true" dir="${binDir}"/>
+        <delete quiet="true" file="${distDir}/${jarName}"/>
+    </target>
+    
+    <target name="build" depends="compress">
+    </target>
+  
+  <target depends="compile" name="compress">
+    <jar destfile="${distDir}/${jarName}" basedir="${binDir}"  
+         includes="**.class **/*.class **/**/*.class "
+	 >
+      <manifest> 
+        <attribute name="Author" value="${user.name}"/> 
+	<section name="Terminal emulator with ssh support fully implemented in Java"> 
+	  <attribute name="Title" value="SSH Terminal emulator"/> 
+	  <attribute name="Vendor" value="GRAAL"/> 
+	</section> 
+        <section name="Copyright"> 
+	  <attribute name="Copy" value="(C) JCraft 2006"/> 
+        </section> 
+        <!-- <attribute name="Main-Class" value="diet/DietProfileTools"/>-->
+      </manifest> 
+    </jar> 
+  </target>
+    
+    <target depends="init" name="compile">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${binDir}" source="${source}" target="${target}">
+            <src path="${srcDir}"/>
+        </javac>
+    </target>
+</project>

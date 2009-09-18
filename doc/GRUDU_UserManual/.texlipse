@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Sat Nov 10 20:04:04 CET 2007
+builderNum=4
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=Grudu-UM.tex
+outputFile=Grudu-UM.pdf
+langSpell=en
+markDer=true
+srcDir=

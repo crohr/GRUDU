@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<shortcuts>
+
+	<skipIfNotSupported/>
+	<programGroup defaultName="GRAAL\GRUDU" location="applications" />
+	<shortcut
+		name="GRUDU Launcher"
+		target="$INSTALL_PATH\WinLauncher.bat"
+		commandLine=""
+		workingDirectory="$INSTALL_PATH"
+		description="This starts GRUDU"
+		iconFile="$INSTALL_PATH\IzPack_GRUDU.ico"
+		iconIndex="0"
+		initialState="noShow"
+		programGroup="yes"
+		desktop="yes"
+		applications="yes"
+		startup="no">
+
+		<createForPack name="Base" />
+	</shortcut>
+
+	<shortcut
+		name="GRUDU Uninstaller"
+		target="$INSTALL_PATH\WinUninstaller.bat"
+		commandLine=""
+		workingDirectory="$INSTALL_PATH"
+		description="This uninstalls GRUDU"
+		iconFile="$INSTALL_PATH\IzPack_GRUDU.ico"
+		iconIndex="0"
+		initialState="noShow"
+		programGroup="yes"
+		desktop="yes"
+		applications="yes"
+		startup="no">
+
+		<createForPack name="Base" />
+	</shortcut>
+
+	<shortcut
+		name="GRUDU Javadoc"
+		target="iexplorer.exe"
+		commandLine=""
+		workingDirectory=""
+		description="This is the Javadoc of GRUDU"
+		iconFile="$INSTALL_PATH\IzPack_GRUDU.ico"
+		iconIndex="0"
+		initialState="noShow"
+		programGroup="yes"
+		desktop="yes"
+		applications="yes"
+		startup="no"
+		url="$INSTALL_PATH\doc\GRUDU\api\index.html">
+		<createForPack name="Documentation" />
+	</shortcut>
+
+		<shortcut
+		name="GRUDU User's Manual"
+		target="AcroRd32.exe"
+		commandLine=""
+		workingDirectory=""
+		description="This is the User's Manual of GRUDU"
+		iconFile="$INSTALL_PATH\IzPack_GRUDU.ico"
+		iconIndex="0"
+		initialState="noShow"
+		programGroup="yes"
+		desktop="yes"
+		applications="yes"
+		startup="no"
+		url="$INSTALL_PATH\doc\Grudu-UM.pdf">
+		<createForPack name="Documentation" />
+	</shortcut>
+
+</shortcuts>

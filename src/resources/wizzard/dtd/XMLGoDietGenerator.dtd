@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!ELEMENT goDIET_descriptor (GoDietExperience,goDiet,resources,diet_services,diet_hierarchy)>
+
+<!--- Defile the behaviour of the GoDietExperience -->
+<!ELEMENT GoDietExperience (diet_experience,output_filepath,reservation_directory)>
+
+<!ELEMENT diet_experience (#PCDATA)>
+
+<!ELEMENT output_filepath (#PCDATA)>
+
+<!ELEMENT reservation_directory (#PCDATA)>
+
+<!--- Define behavior of GoDIET -->
+<!ELEMENT goDiet (useUniqueDirs,saveStdOut,saveStdErr,debug,log)>
+
+<!ELEMENT debug (#PCDATA)>
+
+<!ELEMENT saveStdOut (#PCDATA)>
+
+<!ELEMENT saveStdErr (#PCDATA)>
+
+<!ELEMENT useUniqueDirs (#PCDATA)>
+
+<!ELEMENT log (#PCDATA)>
+
+<!--- Define resources available for data storage and compution -->
+<!--- Must define local scratch directory for use before launch -->
+<!ELEMENT resources (scratch,storage+,cluster+)>
+
+<!ELEMENT storage (label,scratch,scp)>
+
+<!ELEMENT label (#PCDATA)>
+
+<!ELEMENT scratch (dir)>
+
+<!ELEMENT dir (#PCDATA)>
+
+<!ELEMENT scp (server,login?)>
+
+<!ELEMENT server (#PCDATA)>
+
+<!ELEMENT login (#PCDATA)>
+
+<!ELEMENT cluster (label,env,disk)>
+
+<!ELEMENT disk (#PCDATA)>
+
+<!ELEMENT env (var*)>
+
+<!ELEMENT var EMPTY>
+<!ATTLIST var
+   name CDATA #REQUIRED
+   value CDATA #REQUIRED
+  >
+
+<!ELEMENT path (#PCDATA)>
+
+<!ELEMENT LD_LIBRARY_PATH (#PCDATA)>
+
+<!--- Define other DIET services to run alongside hierarchy -->
+<!ELEMENT diet_services (omni_names,log_central?,log_tool?,diet_statistics?)>
+<!ELEMENT omni_names (location,port?,remote_binary,trace_level?)>
+
+<!ELEMENT log_central (location,remote_binary,trace_level?,connectDuringLaunch?)>
+<!ELEMENT log_tool (location,remote_binary,trace_level?)>
+<!ELEMENT diet_statistics EMPTY>
+
+<!--- Define hierarchy of agents and SeDs -->
+<!ELEMENT diet_hierarchy (master_agent+,ma_dag*,local_agent*,SeD*)>
+
+<!ELEMENT master_agent (location,remote_binary,trace_level?,useDietStats?)>
+<!ELEMENT ma_dag (location,remote_binary,trace_level?,useDietStats?,parameters?,type?)>
+
+<!ELEMENT local_agent (remote_binary,trace_level?,useDietStats?,type?)>
+
+<!ELEMENT SeD (remote_binary,type?,trace_level?,useDietStats?,maxConcurrentJobs?,parameters?,number?,batch?)>
+
+<!ELEMENT parameters (string)>
+
+<!ELEMENT location (#PCDATA)>
+
+<!ELEMENT port (#PCDATA)>
+
+<!ELEMENT remote_binary (#PCDATA)>
+
+<!ELEMENT trace_level (#PCDATA)>
+
+<!ELEMENT connectDuringLaunch (#PCDATA)>
+
+<!ELEMENT useDietStats (#PCDATA)>
+
+<!ELEMENT type (#PCDATA)>
+
+<!ELEMENT maxConcurrentJobs (#PCDATA)>
+
+<!ELEMENT number (#PCDATA)>
+
+<!ELEMENT string (#PCDATA)>
+
+<!ELEMENT batch (batchName?,batchQueue?,pathToNFS?,pathToTmp?)>
+<!ELEMENT batchName (#PCDATA)>
+<!ELEMENT batchQueue (#PCDATA)>
+<!ELEMENT pathToNFS (#PCDATA)>
+<!ELEMENT pathToTmp (#PCDATA)>

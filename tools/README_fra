@@ -1,0 +1,85 @@
+DIET_DashBoard est un jeu d'outils écrits en Java qui fournissent à
+l'utilisateur final de DIET une interface utilisateur conviviale pour
+concevoir, déployer et contrôler l'exécution d'applications basées
+sur le framework DIET.
+
+Le DIET_DashBoard est un jeu extensible d'outils graphiques pour la
+communauté de DIET. Actuellement six outils sont disponibles :
+
+Les composants principaux du DIET_DashBoard sont :
+
+Workflow Designer : cet outil consacré aux applications de workflow
+écrites avec DIET fournit à l'utilisateur une façon simple pour
+concevoir et exécuter des workflows avec DIET. Après la connexion à
+une plate-forme DIET déployée, l'utilisateur peut composer les services
+disponibles différents et les lier par drag'n'drop ou charger un fichier
+de workflow existant pour le (re)utiliser. Une fois le workflow
+conçu, l'utilisateur peut mettre ses paramètres et l'exécuter ensuite.
+DIET_DashBoard inclut un client générique qui peut exécuter n'importe
+quel workflow. Les résultats de l'éxécution du workflow ainsi que les
+log sont ensuite affichés.
+
+Workflow LogService : cet outil peut être utilisé pour contrôler
+l'exécution de workflows en montrant les noeuds DAG de chaque workflow
+et leurs états. Trois états sont disponibles : waiting, running et done.
+Le Workflow Logservice peut être utilisé dans deux modes :
+  - Mode local : peut être utilisé si votre application DIET peut avoir
+  accès à votre hôte.
+  - Mode distant : ce mode est utile si votre plate-forme est derrière
+  un pare-feu et permet seulement des connexions ssh.
+
+DIET Designer  : permet à l'utilisateur de concevoir graphiquement une
+hiérarchie DIET. Seulement les caractéristiques d'application sont définies
+(le type d'agent : MA, LA et SeD).
+La hiérarchie conçue peut être stockée pour être utilisé avec l'outil
+de Mapping.
+
+DIET Mapping Tool : permet à l'utilisateur de dresser la carte des
+ressources Grid'5000 allouées à une application DIET. La configuration est
+faite d'une façon interactive en choisissant le site et en le positionnant
+sur un des éléments de la hiérarchie. Pour chaque site Grid'5000, les
+noeuds sont utilisés d'une façon homogène mais l'utilisateur peut choisir
+un hôte particulier si nécessaire.
+
+DIET Deploy Tool : cet outil est une interface graphique à GoDIET. Il
+fournit les opérations GoDIET de base : open, launch, stop et aussi un
+mécanisme contrôlant si les éléments de la hiérarchie DIET sont toujours
+vivants (trois états sont disponibles : unknown, dead et ok).
+Comme le Workflow LogService, le DIET Deploy Tool peut être utilisé dans
+un mode local ou un mode distant.
+
+GRUDU : cet outil a été conçu pour gérer les ressources
+réseau de l'utilisateur qui sont un aspect important du grid computing.
+ Actuellement cet outil est utilisé seulement pour la plate-forme
+Grid'5000 et fournit plusieurs opérations pour faciliter l'accès à
+cette plate-forme. Les caractéristiques principales sont :
+  - Affichage du statut de la plate-forme : cette fonction fournit des
+  informations sur les clusters, les noeuds et les jobs de la plateforme.
+  - Assignation de ressources : cette fonction fournit une façon simple
+  d'allouer des ressources en choisissant sur une carte de Grid'5000
+  le nombre de noeuds exigés et en définissant le temps de l'allocation.
+  Les ressources allouées peuvent être stockées et utilisées avec le
+  DIET Mapping Tool.
+  - Monitoring des resources grâce au plugin Ganglia qui vous donne des
+  information bas niveau, sur toutes les machines d'un site (données 
+  instantanées) ou sur l'historique des métriques por les machines de vos
+  jobs.
+  - Management du déploiement des partitions avec un GUI pour KaDeploy 
+  qui vous permet un gestion de vos déploiements simplifiée.
+  - Un terminal qui vous permet de vous connecter directement sur vos jobs 
+  ou sur la frontale d'un site.
+  - Un gestionnaire de fichier qui vous permet de faire des envois/réceptions
+  de fichiers entre votre machine locale et Grid'5000 mais aussi entre les 
+  frontales de Grid'5000.
+
+Plus d'informations peuvent être trouvées dans GRUDU.
+
+XMLGoDIETGenerator : cet outil a été conçu pour aider l'utilisateur à
+créer des hiérarchies à partir de frameworks existants et ceci basé sur
+ressources allouées. On demandera à l'utilisateur de choisir une
+expérience (un framework de hiérarchie) parmi ceux disponible (des
+hiérarchies personnelles peuvent être ajoutées, pour plus d'informations,
+ se référer à la documentation du XMLGoDIETGenerator).
+Pour chaque hiérarchie l'utilisateur devra spécifier les éléments
+nécessaires exigés (MA/LA/SED). Finalement une hiérarchie sera produite
+et l'utilisateur pourra alors la déployer grâce au DIET Deploy Tool.

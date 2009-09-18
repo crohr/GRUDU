@@ -1,0 +1,90 @@
+<project name="Ganglia Analyzer" default="jars" basedir=".">
+
+<!-- ========== Compiler Defaults ========================================= -->
+
+  <!-- Should Java compilations set the 'debug' compiler option? -->
+  <property name="compile.debug"           value="true"/>
+
+  <!-- Should Java compilations set the 'optimize' compiler option? -->
+  <property name="compile.optimize"        value="true"/>
+	
+<!-- ========== Properties keys =========================================== -->
+	
+	<property name="srcDir" value="${basedir}/src"/>
+	<property name="buildDir" value="${basedir}/build"/>
+	<property name="imagesDir" value="images"/>
+	<property name="libraryDir" value="${basedir}/lib"/>
+	<property name="distDir" value="${basedir}"/>
+	
+	<property name="jfreechartJar" value="jfreechart-1.0.3.jar"/>
+	<property name="jdomJar" value="jdom.jar"/>
+	<property name="sshJar" value="trilead-ssh2-build211.jar"/>
+	<property name="jcommonJar" value="jcommon-1.0.6.jar"/>
+	<property name="l2fprod-common-tasksJar" value="l2fprod-common-tasks.jar"/>
+	<property name="liquidlnfJar" value="liquidlnf.jar"/>
+	<property name="l2fprod-common-buttonbarJar" value="l2fprod-common-buttonbar.jar"/>
+	<property name="outputJar" value="GangliaAnalyzer.jar"/>
+
+<!-- ========== Executable Targets ======================================== -->
+
+  <target name="prepare" description="Prepare build directory">
+    <mkdir dir="${buildDir}"/>
+  	<mkdir dir="${buildDir}/${imagesDir}" />
+  	    <copy todir="${buildDir}/${imagesDir}">
+  	      <fileset dir="${srcDir}/${imagesDir}"/>
+  	    </copy>
+  </target>
+
+  <target name="compile" depends="prepare" description="Compile shareable components">
+    <javac  srcdir="${srcDir}"
+           destdir="${buildDir}"
+	     debug="${compile.debug}"
+          optimize="${compile.optimize}"
+	  nowarn="true">
+      <classpath>
+      	<pathelement location="${libraryDir}/${liquidlnfJar}"/>
+      	<pathelement location="${libraryDir}/${jdomJar}"/>
+      	<pathelement location="${libraryDir}/${sshJar}"/>
+      	<pathelement location="${libraryDir}/${jfreechartJar}"/>
+      	<pathelement location="${libraryDir}/${jcommonJar}"/>
+      	<pathelement location="${libraryDir}/${l2fprod-common-buttonbarJar}"/>
+      	<pathelement location="${libraryDir}/${l2fprod-common-tasksJar}"/>
+      </classpath>
+      <include name="**/**"/>
+  </javac>
+  </target>
+
+  <target name="clean" description="Clean build and distribution directories">
+    <delete quiet="true" dir="${buildDir}"/>
+    <delete quiet="true" file="${distDir}/${outputJar}"/>
+  </target>
+
+  <target name="jars" depends="compile" description="Create Executable Jar">
+  	
+    <jar compress="true" jarfile="${distDir}/${outputJar}"
+            basedir="${buildDir}"
+    	includes="**.class **/*.class **/**/*.class **/**/**/*.class
+    		           images/*.png">
+    	<manifest> 
+    	        <attribute name="Author" value="${user.name}"/> 
+    		<section name="Ganglia Analyzer for Grid'5000"> 
+    		  <attribute name="Title" value="gangliaAnalyzer"/> 
+    		  <attribute name="Vendor" value="GRAAL"/> 
+    		</section> 
+    	        <section name="Copyright"> 
+    		  <attribute name="Copy" value="(C) Graal Ens-Lyon 2006"/> 
+    	        </section> 
+    	        <attribute name="Main-Class" value="ganglia/controller/GangliaAnalyzer"/>
+    			<attribute name="Class-Path" value="./lib/${liquidlnfJar}
+    				./lib/${jdomJar} 
+    				./lib/${sshJar} 
+    				./lib/${jfreechartJar} 
+    				./lib/${jcommonJar} 
+    				./lib/${l2fprod-common-buttonbarJar} 
+    				./lib/${l2fprod-common-tasksJar}" />
+
+    	      </manifest> 
+    </jar>
+  </target>
+
+</project>
